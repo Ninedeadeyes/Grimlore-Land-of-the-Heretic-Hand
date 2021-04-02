@@ -1,2 +1,2 @@
 # GrimeLore-Land-of-the-Heretic-Hand
-Open world ASCII rpg written in standard Library Python 
+2D Open world ASCII rpg written in standard Library Python 
