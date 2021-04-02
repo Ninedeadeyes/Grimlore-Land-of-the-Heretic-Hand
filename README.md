@@ -14,6 +14,9 @@ Note:
 
 Most likely I will be updating the game, even though complete, it still need some polishing. Will be grateful with any feedback to improve the game 
 
+Youtube video : 
+
+https://www.youtube.com/watch?v=ePkWSRuAVH8
 
 Music created using BeepBox 
 
