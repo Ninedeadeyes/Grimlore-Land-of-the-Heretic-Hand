@@ -12,7 +12,7 @@ Explore the land of the Heretic Hand and find out the mystery of your past. Craf
 
 Note:
 
-Most likely I will be updating the game, even though complete, it still need some polishing. Will be grateful with any feedback to improve the game 
+Most likely I will be updating the game, even though complete, it still need some polishing. Will be grateful with any feedback to improve the game. I will also be uploading up a an 'game engine' version so people can make their own games if they like.  
 
 Youtube video : 
 
