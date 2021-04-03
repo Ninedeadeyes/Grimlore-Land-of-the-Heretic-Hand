@@ -1,5 +1,5 @@
 # GrimeLore-Land-of-the-Heretic-Hand 1.0
-2D Open world ASCII rpg written in standard Library Python 
+2D Open world ASCII rpg written in standard Library Python delivering an old school rpg experience. 
 
 
 is this the best open world rpg you have ever played ? Probably not but is it the best open world rpg you ever played coded in python 3 just using the standard library ? ( Potentially )  
