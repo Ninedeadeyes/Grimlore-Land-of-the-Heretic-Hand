@@ -325,13 +325,14 @@ def outside_nine_dead_eyes(Player):
                     choice=input("Yes (Y) No (N)").upper()
                     if choice==("Y"):
                         Player.shadow_hunter=True
-                        Player.max_strength+=20
+                        Player.player_class="Shadow Hunter"
+                        Player.max_strength+=15
                         Player.strength=Player.max_strength
                         Player.inventory.append(ShadowBlade("Shadow Blade",75,2000))
                         print("After many months of training you become a Skilled Shadow Hunter")
                         print("Nine Dead Eyes gifts you with the Shadow Blade ")
                         print("As a reward for completing your training ")
-                        print("You gain +20 to Max Strength")
+                        print("You gain +15 to Max Strength")
                         print("You gain Shadow Blade")
                         print("You gain Passive Skill 'Master Killer' For every attack, you make an additional 'special attack' ")
                         print("You gain Passive Skill 'Be Quick or be Dead'. You gain an extra melee attack with Freeze Blast")
@@ -361,6 +362,7 @@ def outside_nine_dead_eyes(Player):
 
                 if choice==("Y"):
                     Player.shadow_hunter=True
+                    Player.player_class="Shadow Hunter"
                     Player.max_strength+=15
                     Player.strength=Player.max_strength
                     Player.inventory.append(ShadowBlade("Shadow Blade",50,2000))
@@ -370,6 +372,7 @@ def outside_nine_dead_eyes(Player):
                     print("You gain +15 to Max Strength")
                     print("You gain Shadow Blade")
                     print("You gain Passive Skill 'Master Killer' For every attack, you make an additional 'special attack'  ")
+                    print("You gain Passive Skill 'Be Quick or be Dead'. You gain an extra melee attack with Freeze Blast")
                     input("Press enter key to continue your adventure")
                     break
 
@@ -509,8 +512,11 @@ def blood_pit( Player):
 
             if score==12:
                 print("You have defeated the arena")
+                print("You have become the master of the pit !!")
                 print("You gain 5 Diamonds ")
+                print ("You gain 40 reputation")
                 Player.diamond+=5
+                Player.reputation+=40
 
             elif score >9 and score<12:
                 print("That was a good show in the Blood Pit")
@@ -521,6 +527,7 @@ def blood_pit( Player):
                 
             else:
                 print("You are too weak for the pit, You don't deserve payment ")
+                print("Come back when you are stronger")
                 
             input("Press enter to continue ")
             break
