@@ -500,7 +500,7 @@ def blood_pit( Player):
                 score+=1
                 print("\033c", end="")
                 print("Final Challenger arrives")  
-                Player.enemy("Blood Pit Champion",80,700,2000,2000,"nothing")
+                Player.enemy("Blood Pit Champion",100,2000,2000,2000,"nothing")
                 if Player.flee==True:
                     break
                 score+=1
