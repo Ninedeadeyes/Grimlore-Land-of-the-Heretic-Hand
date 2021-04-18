@@ -12,7 +12,7 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 
 Note:
 
-Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine ( game engine.py) if anyone would like to make their own game. 
+Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.  
 
 Youtube video : 
 
