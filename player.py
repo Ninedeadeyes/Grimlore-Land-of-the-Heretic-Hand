@@ -283,6 +283,7 @@ class Player(object):
                             self.health-=enemy_damage
                             print("The",name,"attack you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protects you for",self.armour.protection,"damage")
+                            break
                         
                         elif self.shadow_flee==True and self.mana>=2:
                             self.mana-=2
