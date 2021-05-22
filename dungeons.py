@@ -227,7 +227,7 @@ def dungeon_battle_1(Player):
         Player.enemy("Lesser Demon",4,100,40,35,"Demon Bone")   
         
 
-    elif r <.80:
+    elif r <.85:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
@@ -306,11 +306,11 @@ def dungeon_battle_2(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .40:
+    if r < .45:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
-    elif r <.50:
+    elif r <.70:
         print("The dead wakes from his slumber, a Fallen Knight rises ")
         Player.enemy("Fallen Knight",8,160,80,50,"Iron Shard") 
         
@@ -408,7 +408,7 @@ def dungeon_battle_3(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r <.40:
+    if r <.45:
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
         Player.enemy("Chaos Spider",17,150,200,90,"Demon Silk")
 
@@ -498,11 +498,11 @@ def dungeon_battle_4(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .40:
+    if r < .45:
         print("You hear a rumbling in the distance. A Corrupted Iron Golem appears ")
         Player.enemy("Corrupted Iron Golem ",15,400,250,120,"Iron Shard") 
 
-    elif r <.60:
+    elif r <.70:
         print(" A Ratling Assassin attacks you in the darkness. Fight for your life")
         Player.enemy("Ratling Assassin ",25,150,250,150,"Ratling Fur")
         
@@ -599,7 +599,7 @@ def dungeon_battle_5(Player):
     Player.dungeon=True
        
     r= random.random()
-    if r < .40:
+    if r < .45:
         print("You hear the muttering of the insane. An Lunatic Cultist appears ")
         Player.enemy("Lunatic Cultist",14,180,150,80,"Brimstone") 
 
@@ -714,7 +714,7 @@ def dungeon_battle_6(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .40:
+    if r < .45:
         print("You hear a rumbling in the distance. A Greater Demon appears ")
         Player.enemy("Greater Demon",45,300,700,750,"Demon Bone") 
 
@@ -814,7 +814,7 @@ def dungeon_battle_7(Player):
     Player.dungeon=True
        
     r= random.random()
-    if r < .40:
+    if r < .45:
         print("You hear the muttering of the insane. A Clockwork Horror appears ")
         Player.enemy("Clockwork Horror",65,150,600,750,"Iron Shard") 
 
