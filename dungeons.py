@@ -222,12 +222,12 @@ def dungeon_battle_1(Player):
         print("A Ratling sneaks up behind you ")
         Player.enemy("Ratling",2,80,30,30,"Ratling Fur")   
 
-    elif r <.70:
+    elif r <.72:
         print ("You see a Lesser Demon ready to feed")
         Player.enemy("Lesser Demon",4,100,40,35,"Demon Bone")   
         
 
-    elif r <.85:
+    elif r <.87:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
@@ -310,12 +310,12 @@ def dungeon_battle_2(Player):
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
-    elif r <.70:
+    elif r <.72:
         print("The dead wakes from his slumber, a Fallen Knight rises ")
         Player.enemy("Fallen Knight",8,160,80,50,"Iron Shard") 
         
 
-    elif r <.85:
+    elif r <.87:
         print(" You stumble upon a lone Ettercap. He wants to play with your guts ")
         Player.enemy("Ettercap",12,100,100,60,"Demon Silk")
 
@@ -412,12 +412,12 @@ def dungeon_battle_3(Player):
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
         Player.enemy("Chaos Spider",17,150,200,90,"Demon Silk")
 
-    elif r <.70:
+    elif r <.72:
         print(" a Hellhound has marked your scent. Defend with violence")
         Player.enemy("Hellhound",20,180,250,120,"Demon Bone")
         
 
-    elif r <.85:
+    elif r <.87:
         print("You hear a roar in the distance. A Iron Tusk Demon appears ")
         Player.enemy("Iron Tusk Demon",18,350,300,150,"Iron Shard") 
         
@@ -502,12 +502,12 @@ def dungeon_battle_4(Player):
         print("You hear a rumbling in the distance. A Corrupted Iron Golem appears ")
         Player.enemy("Corrupted Iron Golem ",15,400,250,120,"Iron Shard") 
 
-    elif r <.70:
+    elif r <.72:
         print(" A Ratling Assassin attacks you in the darkness. Fight for your life")
         Player.enemy("Ratling Assassin ",25,150,250,150,"Ratling Fur")
         
 
-    elif r <.85:
+    elif r <.87:
         print(" You see a manical Demonic Abomination. End the wretched beast")
         Player.enemy("Demonic Abomination",22,250,300,200,"Demon Bone")
 
@@ -603,12 +603,12 @@ def dungeon_battle_5(Player):
         print("You hear the muttering of the insane. An Lunatic Cultist appears ")
         Player.enemy("Lunatic Cultist",14,180,150,80,"Brimstone") 
 
-    elif r <.70:
+    elif r <.72:
         print(" You see a Chaos Spawn in your distance. Prepare for combat")
         Player.enemy("Chaos Spawn ",16,150,150,100,"Brimstone")
         
 
-    elif r <.85:
+    elif r <.82:
         print(" A Cultist Champion rush towards you. Defend with violence")
         Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
 
@@ -718,11 +718,11 @@ def dungeon_battle_6(Player):
         print("You hear a rumbling in the distance. A Greater Demon appears ")
         Player.enemy("Greater Demon",45,300,700,750,"Demon Bone") 
 
-    elif r <.70:
+    elif r <.72:
         print(" A Plague Demon attacks you in the darkness. Fight for your life")
         Player.enemy("Plague Demon",35,400,400,750,"Demon Bone")
         
-    elif r < .85:
+    elif r < .87:
         print(" You see a manical Demon War Champion. End the wretched demon")
         Player.enemy("Demon War Champion",50,450,1000,1000,"Demon Bone")
 
@@ -818,12 +818,12 @@ def dungeon_battle_7(Player):
         print("You hear the muttering of the insane. A Clockwork Horror appears ")
         Player.enemy("Clockwork Horror",65,150,600,750,"Iron Shard") 
 
-    elif r <.70:
+    elif r <.72:
         print(" You see a Clockwork Pain Taker in your distance. Prepare for combat")
         Player.enemy("Clockwork Pain Taker  ",35,650,600,750,"Iron Shard")
         
 
-    elif r <.85:
+    elif r <.87:
         print(" A Clockwork Engineer rush towards you. Defend with violence")
         Player.enemy("Clockwork Engineer",45,400,800,1000,"Iron Shard")
 
