@@ -157,13 +157,7 @@ def goblin_gamble(Player):
         input("Press enter to continue")
             
         break
-
-    
-                
-            
-                
-            
-
+       
 
 def dungeon_1 (Player):
     while True:
@@ -238,10 +232,11 @@ def dungeon_battle_1(Player):
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
     elif r <.50:
-        tresure_chest_1(Player)
+        goblin_gamble(Player)
+        
 
     else:
-        goblin_gamble(Player)
+        tresure_chest_1(Player)
             
 
 
@@ -325,10 +320,12 @@ def dungeon_battle_2(Player):
         Player.enemy("Ettercap",12,100,100,60,"Demon Silk")
 
     elif r <.50:
-        tresure_chest_1(Player)
+        goblin_gamble(Player)
+        
 
     else:
-        goblin_gamble(Player)
+        tresure_chest_1(Player)
+        
             
             
 
@@ -426,11 +423,12 @@ def dungeon_battle_3(Player):
         
 
     elif r <.50:
-        tresure_chest_2(Player)
+        goblin_gamble(Player)
+        
 
     else:
-        goblin_gamble(Player)
-
+        tresure_chest_2(Player)
+        
 
 def dungeon_4 (Player):
     while True:
@@ -514,11 +512,12 @@ def dungeon_battle_4(Player):
         print(" You see a manical Demonic Abomination. End the wretched beast")
         Player.enemy("Demonic Abomination",22,250,300,200,"Demon Bone")
 
-    elif r <.40:
-        tresure_chest_2(Player)
+    elif r <.50:
+        goblin_gamble(Player)
+        
 
     else:
-        goblin_gamble(Player)
+        tresure_chest_2(Player)
 
 def dungeon_5 (Player):
     while True:
@@ -615,10 +614,11 @@ def dungeon_battle_5(Player):
         Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
 
     elif r <.50:
-        tresure_chest_2(Player)
+        goblin_gamble(Player)
+        
 
     else:
-        goblin_gamble(Player)
+        tresure_chest_2(Player)
 
 
 def dungeon_sideboss_5(Player):
@@ -833,4 +833,3 @@ def dungeon_battle_7(Player):
 
     else:
         goblin_gamble(Player)
-
