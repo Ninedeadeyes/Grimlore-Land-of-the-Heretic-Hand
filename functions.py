@@ -3,6 +3,7 @@ import time
 from player import Player
 from data import nothing_list,weapon_list
 from items import*
+import winsound
 
 def nothing():
     nothing=random.choice(nothing_list)
@@ -183,9 +184,11 @@ def outside_sideboss_2(Player):
             Player.sideboss_2_alive=False
 
 def doom_king(Player):
+        winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
         print("You see the Doom King on his throne. He speaks, 'A new challnger, how exciting' ")
         Player.enemy("Doom King",66,6666,10000,1000000,"Demon Bone")
         if Player.flee==True:
+            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("\033c", end="")
             pass
         else:       
@@ -197,7 +200,7 @@ def doom_king(Player):
             print("You gain Doom King Sword")
             Player.inventory.append(DoomKingPlateMail("Doom King Plate Mail",50,2000))
             Player.inventory.append(DoomKingSword("Doom King Sword",75,2000))
-            
+            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             input("Press enter to continue")
             
             Player.doom_king_alive=False
@@ -509,7 +512,6 @@ def blood_pit( Player):
                 break
 
             print("Your score was",score)
-
             if score==12:
                 print("You have defeated the arena")
                 print("You have become the master of the pit !!")
