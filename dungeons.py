@@ -123,6 +123,7 @@ def goblin_gamble(Player):
                     int(bet)
                     break
                 except:
+                    print("\033c", end="")
                     print("This is not a number")
                     
             while int(bet)>Player.gold:
@@ -609,11 +610,11 @@ def dungeon_battle_5(Player):
         Player.enemy("Chaos Spawn ",16,150,150,100,"Brimstone")
         
 
-    elif r < .30:
+    elif r < .50:
         print(" A Cultist Champion rush towards you. Defend with violence")
         Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
 
-    elif r <.40:
+    elif r <.50:
         tresure_chest_2(Player)
 
     else:
@@ -818,7 +819,7 @@ def dungeon_battle_7(Player):
         print("You hear the muttering of the insane. A Clockwork Horror appears ")
         Player.enemy("Clockwork Horror",65,150,600,750,"Iron Shard") 
 
-    elif r <.50:
+    elif r <.60:
         print(" You see a Clockwork Pain Taker in your distance. Prepare for combat")
         Player.enemy("Clockwork Pain Taker  ",35,650,600,750,"Iron Shard")
         
