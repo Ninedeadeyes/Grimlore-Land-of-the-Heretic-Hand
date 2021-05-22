@@ -193,6 +193,7 @@ def doom_king(Player):
             pass
         else:       
             print("\033c", end="")
+            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("You defeated the Doom King, you have freed the land from his evil hands")
             print("You have conquered the final 'end game' boss, thank you for playing !! ")
             print("You gain 1 million gold")
@@ -200,7 +201,7 @@ def doom_king(Player):
             print("You gain Doom King Sword")
             Player.inventory.append(DoomKingPlateMail("Doom King Plate Mail",50,2000))
             Player.inventory.append(DoomKingSword("Doom King Sword",75,2000))
-            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+
             input("Press enter to continue")
             
             Player.doom_king_alive=False
