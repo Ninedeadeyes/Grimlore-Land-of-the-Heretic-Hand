@@ -166,7 +166,6 @@ def settlement_1(Player):
                             Player.fire_bolt=True
                             Player.gold-=100
                             print("You gain the ability to use fire bolt")
-                            print("You have lost 100 gold")
                             print("                             ")                
 
                     elif choice==("S"):
@@ -184,7 +183,6 @@ def settlement_1(Player):
                             Player.shadow_flee=True
                             Player.gold-=50
                             print("You gain the ability to use Shadow Flee")
-                            print("You lost 50 gold")
                             print("                             ")        
 
                     else:
@@ -425,7 +423,6 @@ def settlement_2(Player):
                             Player.divine_heal=True
                             Player.gold-=1000
                             print("You gain the ability to use Divine Heal")
-                            print("You have lost 1000 gold")
                             print("                             ")                
 
                     elif choice==("I"):
@@ -442,7 +439,6 @@ def settlement_2(Player):
                             Player.ice_blast=True
                             Player.gold-=700
                             print("You gain the ability to use Ice Blast")
-                            print("You lost 700 gold")
                             print("                             ")       
 
                     else:
@@ -721,7 +717,6 @@ def settlement_3(Player):
                             Player.divine_heal=True
                             Player.gold-=1000
                             print("You gain the ability to use Divine Heal")
-                            print("You have lost 1000 gold")
                             print("                             ")                
 
                     elif choice==("I"):
@@ -738,7 +733,6 @@ def settlement_3(Player):
                             Player.ice_blast=True
                             Player.gold-=700
                             print("You gain the ability to use Ice Blast")
-                            print("You lost 700 gold")
                             print("                             ")       
 
                     else:
