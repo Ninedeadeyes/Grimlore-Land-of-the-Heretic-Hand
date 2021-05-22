@@ -185,7 +185,7 @@ def outside_sideboss_2(Player):
 
 def doom_king(Player):
         winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
-        print("You see the Doom King on his throne. He speaks, 'A new challnger, how exciting' ")
+        print("You see the Doom King on his throne. He speaks, 'A new challenger, how exciting' ")
         Player.enemy("Doom King",66,6666,10000,1000000,"Demon Bone")
         if Player.flee==True:
             winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
