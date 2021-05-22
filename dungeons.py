@@ -3,6 +3,8 @@ from player import Player
 from animation import dungeon_art,temple_art
 import time 
 
+game=("poker","dice","mahjong","bingo","rummy","roulette")
+
 #1ST DUNGEON 
 
 def dungeon_print():
@@ -43,6 +45,124 @@ def temple_print():
     print("loading")
     time.sleep(.5)
     print("\033c", end="")
+
+def tresure_chest_1(Player):
+    while True:
+        print ("You stumble upon a treasure chest")
+        choice=input("Do you open the chest? Yes (Y), No(N)").upper()
+
+        if choice==("Y"):
+            r=random.random()
+            if r<.50:
+                Player.gold+=50
+                print("You have found 50 gold coins")
+                input("Press any key to continue")
+                break
+
+            else:
+                print("Alas, it was a Mimic !! ")
+                Player.enemy("Mimic",8,100,60,50,"nothing")
+                break
+        else:
+            print("You decide to leave the chest alone")
+            break
+
+def tresure_chest_2(Player):
+    while True:
+        print ("You stumble upon a treasure chest")
+        choice=input("Do you open the chest? Yes (Y), No(N)").upper()
+
+        if choice==("Y"):
+            r=random.random()
+            if r<.50:
+                Player.gold+=200
+                print("You have found 200 gold coins")
+                input("Press any key to continue")
+                break
+
+            else:
+                print("Alas, it was a Greater Mimic !! ")
+                Player.enemy("Greater Mimic",30,250,350,50,"nothing")                    
+                break
+        else:
+            print("You decide to leave the chest alone")
+            break
+
+def tresure_chest_3(Player):
+    while True:
+        print ("You stumble upon a treasure chest")
+        choice=input("Do you open the chest? Yes (Y), No(N)").upper()
+
+        if choice==("Y"):
+            r=random.random()
+            if r<.50:
+                Player.gold+=1000
+                print("You have found 1000 gold coin")
+                input("Press any key to continue")
+                break
+
+            else:
+                print("Alas, it was a Demonic Mimic !! ")
+                Player.enemy("Demonic Mimic",60,250,500,1000,"nothing")
+                break
+        else:
+            print("You decide to leave the chest alone")
+            break
+
+def goblin_gamble(Player):
+    while True:
+        print("You stumble upon a goblin who invite you for a gamble")
+        choice=input("Do you accept the offer? Yes (Y), No(N)").upper()
+ 
+        if choice==("Y" or "YES"):
+            game_type=random.choice(game)
+            print("The goblin decide it will be a game of",game_type)
+            while True:
+                bet=input("how much do you bet?")
+                try:
+                    int(bet)
+                    break
+                except:
+                    print("This is not a number")
+                    
+            while int(bet)>Player.gold:
+                print("\033c", end="")
+                print("You do not have enough gold. Please try again")
+                while True:
+                    bet=input("how much do you bet?")
+                    try:
+                        int(bet)
+                        break
+                    except:
+                        print("This is not a number")
+
+            bet=int(bet)
+            guess=random.randint(1,3)
+            die_1=random.randint(1,3)
+
+            if die_1!=guess:
+                print("The goblin has bested you in the game of",game_type)
+                print("You lose",str(bet),"gold")
+                Player.gold-=bet
+
+            else:
+                print("You have bested the goblin in the game of",game_type)
+                win=bet*2
+                print("You win",str(win),"gold")
+                Player.gold+=bet
+        else:
+            print("You decide not to gamble your gold")
+
+        input("Press enter to continue")
+            
+        break
+
+    
+                
+            
+                
+            
+
 
 def dungeon_1 (Player):
     while True:
@@ -116,27 +236,12 @@ def dungeon_battle_1(Player):
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
+    elif r <.50:
+        tresure_chest_1(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
-
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=50
-                    print("You have found 50 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Mimic !! ")
-                    Player.enemy("Mimic",8,100,60,50,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
+        goblin_gamble(Player)
+            
 
 
 #2ND DUNGEON 
@@ -205,40 +310,27 @@ def dungeon_battle_2(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .40:
+    if r < .30:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
-    elif r <.50:
+    elif r <.40:
         print("The dead wakes from his slumber, a Fallen Knight rises ")
         Player.enemy("Fallen Knight",8,160,80,50,"Iron Shard") 
         
 
-    elif r < .95:
+    elif r < .90:
         print(" You stumble upon a lone Ettercap. He wants to play with your guts ")
         Player.enemy("Ettercap",12,100,100,60,"Demon Silk")
 
+    elif r <.50:
+        tresure_chest_1(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
+        goblin_gamble(Player)
+            
+            
 
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=100
-                    print("You have found 100 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Mimic !! ")
-                    Player.enemy("Mimic",8,100,60,50,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
 
 def dungeon_sideboss_1(Player):
         
@@ -322,37 +414,21 @@ def dungeon_battle_3(Player):
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
         Player.enemy("Chaos Spider",17,150,200,90,"Demon Silk")
 
-    elif r <.80:
+    elif r <.60:
         print(" a Hellhound has marked your scent. Defend with violence")
         Player.enemy("Hellhound",20,180,250,120,"Demon Bone")
         
 
-    elif r < .95:
+    elif r < .60:
         print("You hear a roar in the distance. A Iron Tusk Demon appears ")
         Player.enemy("Iron Tusk Demon",18,350,300,150,"Iron Shard") 
         
 
+    elif r <.50:
+        tresure_chest_2(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
-
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=200
-                    print("You have found 200 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Greater Mimic !! ")
-                    Player.enemy("Greater Mimic",30,250,350,50,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
+        goblin_gamble(Player)
 
 
 def dungeon_4 (Player):
@@ -424,41 +500,24 @@ def dungeon_battle_4(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .45:
+    if r < .40:
         print("You hear a rumbling in the distance. A Corrupted Iron Golem appears ")
         Player.enemy("Corrupted Iron Golem ",15,400,250,120,"Iron Shard") 
 
-    elif r <.80:
+    elif r <.60:
         print(" A Ratling Assassin attacks you in the darkness. Fight for your life")
         Player.enemy("Ratling Assassin ",25,150,250,150,"Ratling Fur")
         
 
-    elif r < .95:
+    elif r < .50:
         print(" You see a manical Demonic Abomination. End the wretched beast")
         Player.enemy("Demonic Abomination",22,250,300,200,"Demon Bone")
 
+    elif r <.40:
+        tresure_chest_2(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
-
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=200
-                    print("You have found 200 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Greater Mimic !! ")
-                    Player.enemy("Greater Mimic",30,250,350,50,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
-
+        goblin_gamble(Player)
 
 def dungeon_5 (Player):
     while True:
@@ -541,40 +600,24 @@ def dungeon_battle_5(Player):
     Player.dungeon=True
        
     r= random.random()
-    if r < .45:
+    if r < .40:
         print("You hear the muttering of the insane. An Lunatic Cultist appears ")
         Player.enemy("Lunatic Cultist",14,180,150,80,"Brimstone") 
 
-    elif r <.80:
+    elif r <.60:
         print(" You see a Chaos Spawn in your distance. Prepare for combat")
         Player.enemy("Chaos Spawn ",16,150,150,100,"Brimstone")
         
 
-    elif r < .95:
+    elif r < .30:
         print(" A Cultist Champion rush towards you. Defend with violence")
         Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
 
+    elif r <.40:
+        tresure_chest_2(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
-
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=200
-                    print("You have found 200 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Greater Mimic !! ")
-                    Player.enemy("Greater Mimic",30,250,350,50,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
+        goblin_gamble(Player)
 
 
 def dungeon_sideboss_5(Player):
@@ -671,40 +714,23 @@ def dungeon_battle_6(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .45:
+    if r < .40:
         print("You hear a rumbling in the distance. A Greater Demon appears ")
         Player.enemy("Greater Demon",45,300,700,750,"Demon Bone") 
 
-    elif r <.80:
+    elif r <.60:
         print(" A Plague Demon attacks you in the darkness. Fight for your life")
         Player.enemy("Plague Demon",35,400,400,750,"Demon Bone")
         
-
-    elif r < .95:
+    elif r < .50:
         print(" You see a manical Demon War Champion. End the wretched demon")
         Player.enemy("Demon War Champion",50,450,1000,1000,"Demon Bone")
 
+    elif r <.40:
+        tresure_chest_3(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
-
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=1000
-                    print("You have found 1000 gold coin")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Demonic Mimic !! ")
-                    Player.enemy("Demonic Mimic",60,250,500,1000,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
+        goblin_gamble(Player)
 
 
 def dungeon_7 (Player):
@@ -788,37 +814,22 @@ def dungeon_battle_7(Player):
     Player.dungeon=True
        
     r= random.random()
-    if r < .45:
+    if r < .40:
         print("You hear the muttering of the insane. A Clockwork Horror appears ")
         Player.enemy("Clockwork Horror",65,150,600,750,"Iron Shard") 
 
-    elif r <.80:
+    elif r <.50:
         print(" You see a Clockwork Pain Taker in your distance. Prepare for combat")
         Player.enemy("Clockwork Pain Taker  ",35,650,600,750,"Iron Shard")
         
 
-    elif r < .95:
+    elif r < .80:
         print(" A Clockwork Engineer rush towards you. Defend with violence")
         Player.enemy("Clockwork Engineer",45,400,800,1000,"Iron Shard")
 
+    elif r <.40:
+        tresure_chest_3(Player)
+
     else:
-        while True:
-        
-            print ("You stumble upon a treasure chest")
-            choice=input("Do you open the chest? Yes (Y), No(N)").upper()
+        goblin_gamble(Player)
 
-            if choice==("Y"):
-                r=random.random()
-                if r<.50:
-                    Player.gold+=1000
-                    print("You have found 1000 gold coins")
-                    input("Press any key to continue")
-                    break
-
-                else:
-                    print("Alas, it was a Demonic Mimic !! ")
-                    Player.enemy("Demonic Mimic",75,250,500,1000,"nothing")
-                    break
-            else:
-                print("You decide to leave the chest alone")
-                break
