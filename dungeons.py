@@ -111,12 +111,12 @@ def tresure_chest_3(Player):
 
 def goblin_gamble(Player):
     while True:
-        print("You stumble upon a goblin who invite you for a gamble")
-        choice=input("Do you accept the offer? Yes (Y), No(N)").upper()
+        print("You stumble upon a Secret Goblin Gambling Den. They invite you for a gamble")
+        choice=input("Do you accept their invite? Yes (Y), No(N)").upper()
  
         if choice==("Y" or "YES"):
             game_type=random.choice(game)
-            print("The goblin decide it will be a game of",game_type)
+            print("The goblins decide it will be a game of",game_type)
             while True:
                 bet=input("how much do you bet?")
                 try:
@@ -142,17 +142,17 @@ def goblin_gamble(Player):
             die_1=random.randint(1,3)
 
             if die_1!=guess:
-                print("The goblin has bested you in the game of",game_type)
+                print("The goblins has bested you in the game of",game_type)
                 print("You lose",str(bet),"gold")
                 Player.gold-=bet
 
             else:
-                print("You have bested the goblin in the game of",game_type)
+                print("You have bested the goblins in the game of",game_type)
                 win=bet*2
                 print("You win",str(win),"gold")
                 Player.gold+=bet
         else:
-            print("You decide not to gamble your gold")
+            print("You decide not to gamble your gold away")
 
         input("Press enter to continue")
             
@@ -218,20 +218,20 @@ def dungeon_battle_1(Player):
     Player.dungeon=True
        
     r= random.random()
-    if r < .50:
+    if r < .40:
         print("A Ratling sneaks up behind you ")
         Player.enemy("Ratling",2,80,30,30,"Ratling Fur")   
 
-    elif r <.80:
+    elif r <.60:
         print ("You see a Lesser Demon ready to feed")
         Player.enemy("Lesser Demon",4,100,40,35,"Demon Bone")   
         
 
-    elif r < .90:
+    elif r < .50:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
         Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
 
-    elif r <.50:
+    elif r <.70:
         goblin_gamble(Player)
         
 
@@ -315,11 +315,11 @@ def dungeon_battle_2(Player):
         Player.enemy("Fallen Knight",8,160,80,50,"Iron Shard") 
         
 
-    elif r < .90:
+    elif r <.70:
         print(" You stumble upon a lone Ettercap. He wants to play with your guts ")
         Player.enemy("Ettercap",12,100,100,60,"Demon Silk")
 
-    elif r <.50:
+    elif r <.65:
         goblin_gamble(Player)
         
 
@@ -408,7 +408,7 @@ def dungeon_battle_3(Player):
     Player.dungeon=True
     print("deeper into the dungeon you go")   
     r= random.random()
-    if r < .45:
+    if r <.40:
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
         Player.enemy("Chaos Spider",17,150,200,90,"Demon Silk")
 
@@ -417,15 +417,14 @@ def dungeon_battle_3(Player):
         Player.enemy("Hellhound",20,180,250,120,"Demon Bone")
         
 
-    elif r < .60:
+    elif r <.70:
         print("You hear a roar in the distance. A Iron Tusk Demon appears ")
         Player.enemy("Iron Tusk Demon",18,350,300,150,"Iron Shard") 
         
 
-    elif r <.50:
+    elif r <.65:
         goblin_gamble(Player)
         
-
     else:
         tresure_chest_2(Player)
         
@@ -508,11 +507,11 @@ def dungeon_battle_4(Player):
         Player.enemy("Ratling Assassin ",25,150,250,150,"Ratling Fur")
         
 
-    elif r < .50:
+    elif r <.70:
         print(" You see a manical Demonic Abomination. End the wretched beast")
         Player.enemy("Demonic Abomination",22,250,300,200,"Demon Bone")
 
-    elif r <.50:
+    elif r <.70:
         goblin_gamble(Player)
         
 
@@ -609,11 +608,11 @@ def dungeon_battle_5(Player):
         Player.enemy("Chaos Spawn ",16,150,150,100,"Brimstone")
         
 
-    elif r < .50:
+    elif r <.70:
         print(" A Cultist Champion rush towards you. Defend with violence")
         Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
 
-    elif r <.50:
+    elif r <.80:
         goblin_gamble(Player)
         
 
@@ -723,11 +722,11 @@ def dungeon_battle_6(Player):
         print(" A Plague Demon attacks you in the darkness. Fight for your life")
         Player.enemy("Plague Demon",35,400,400,750,"Demon Bone")
         
-    elif r < .50:
+    elif r < .60:
         print(" You see a manical Demon War Champion. End the wretched demon")
         Player.enemy("Demon War Champion",50,450,1000,1000,"Demon Bone")
 
-    elif r <.40:
+    elif r <.80:
         tresure_chest_3(Player)
 
     else:
@@ -824,11 +823,11 @@ def dungeon_battle_7(Player):
         Player.enemy("Clockwork Pain Taker  ",35,650,600,750,"Iron Shard")
         
 
-    elif r < .80:
+    elif r <.70:
         print(" A Clockwork Engineer rush towards you. Defend with violence")
         Player.enemy("Clockwork Engineer",45,400,800,1000,"Iron Shard")
 
-    elif r <.40:
+    elif r <.80:
         tresure_chest_3(Player)
 
     else:
