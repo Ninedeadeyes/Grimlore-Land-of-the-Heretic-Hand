@@ -1,6 +1,6 @@
 from items import*
 
-weapon_list=(DemonBastardSword("Demon Bastard Sword",45,100),DoomHammer("Doom Hammer",37,1500),DemonBoneAxe("Demon Bone Axe",18,500),ShadowBlade("Shadow Blade",70,2000))
+weapon_list=[DemonBastardSword(),DoomHammer(),DemonBoneAxe(),ShadowBlade()]
 
 nothing_list=["You look for deadly traps but find none","You find nothing of interest here, maybe next time", "Wait..You hear something..It must be your imagination",          
              " You find nothing of interest here","You find nothing of interest here","You find nothing of interest here","You find nothing of interest here",

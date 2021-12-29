@@ -219,7 +219,7 @@ def settlement_1(Player):
                     else:
                         Player.ratling_fur-=1
                         Player.gold-=75
-                        Player.inventory.append(RatskinTunic("Ratskin Tunic",3,100))
+                        Player.inventory.append(RatskinTunic())
                         print("You gain : Ratskin Tunic")
                         print("                                                                                            ")
 
@@ -235,7 +235,7 @@ def settlement_1(Player):
                     else:
                         Player.imp_tooth-=1
                         Player.gold-=75
-                        Player.inventory.append(ImpToothSpear("Imp Tooth Spear",8,100))
+                        Player.inventory.append(ImpToothSpear())
                         print("You gain : Imp Tooth Spear")
                         print("                                                                                            ")
 
@@ -250,7 +250,7 @@ def settlement_1(Player):
                     else:    
                         Player.demon_bone-=1
                         Player.gold-=100
-                        Player.inventory.append(DemonBoneShiv("Demon Bone Shank",12,100))
+                        Player.inventory.append(DemonBoneShiv())
                         print("You gain : Demon Bone Shiv")
                         print("                                                                                            ")#
                         
@@ -266,7 +266,7 @@ def settlement_1(Player):
                         Player.demon_bone-=2
                         Player.brimstone-=2
                         Player.gold-=700
-                        Player.inventory.append(BrimstoneBoneArmour("Brimstone Bone Armour",12,100))
+                        Player.inventory.append(BrimstoneBoneArmour())
                         print("You gain : Brimstone Bone Armour")
                         print("                                                                                            ")
                         
@@ -477,7 +477,7 @@ def settlement_2(Player):
                     else:
                         Player.demon_bone-=2
                         Player.gold-=300
-                        Player.inventory.append(DemonBoneAxe("Demon Bone Axe",18,500))
+                        Player.inventory.append(DemonBoneAxe())
                         print("You gain : Demon Bone Axe")
                         print("                                                                                            ")
 
@@ -495,7 +495,7 @@ def settlement_2(Player):
                     else:
                         Player.demon_silk-=2
                         Player.gold-=400
-                        Player.inventory.append(SilkArmour("Silk Armour",7,100))
+                        Player.inventory.append(SilkArmour())
                         print("You gain : Silk Armour")
                         print("                                                                                            ")
 
@@ -513,7 +513,7 @@ def settlement_2(Player):
                         Player.iron_shard-=2
                         Player.brimstone-=2
                         Player.gold-=500
-                        Player.inventory.append(BrimstoneMace("Brimstone Mace",22,700))
+                        Player.inventory.append(BrimstoneMace())
                         print("You gain : Brimstone Mace")
                         print("                                                                                            ")
 
@@ -679,13 +679,15 @@ def settlement_3(Player):
                                 Player.player_class="Holy Knight"
                                 Player.max_health+=100
                                 Player.health=Player.max_health
-                                Player.inventory.append(HolyPlateMail("Holy Plate Mail",35,100))
-                                Player.inventory.append(SilverSword("Silver Sword",50,1500))
+                                Player.inventory.append(HolyPlateMail())
+                                Player.inventory.append(SilverSword())
+                                Player.divine_heal=True
                                 print("After many months of training you become a Hardened Holy Knight ")
                                 print("You gain 100 max hp")
                                 print("You gain Silver Sword")
                                 print("You gain Holy Plate Mail")
                                 print("Gain : Passive Skill 'Closer to God'( Divine Heal cost 3 less mana points )  ")
+                                print("Gain : Divine Heal")
                                 print("                             ")
 
 
@@ -772,7 +774,7 @@ def settlement_3(Player):
                         Player.ratling_fur-=5
                         Player.iron_shard-=3
                         Player.gold-=1000
-                        Player.inventory.append(RatlingDeathClaws("Ratling Death Claws",32,1000))
+                        Player.inventory.append(RatlingDeathClaws())
                         print("You gain : Ratling Death Claws")
                         print("                                                                                            ")
 
@@ -792,7 +794,7 @@ def settlement_3(Player):
                         Player.iron_shard-=5
                         Player.demon_bone-=2
                         Player.gold-=1500
-                        Player.inventory.append(DoomHammer("Doom Hammer",37,1500))
+                        Player.inventory.append(DoomHammer())
                         print("You gain : Doom Hammer")
                         print("                                                                                            ")
 
@@ -811,7 +813,7 @@ def settlement_3(Player):
                         Player.brimstone-=3
                         Player.demon_bone-=3
                         Player.gold-=1500
-                        Player.inventory.append(HereticPlateMail("Heretic Plate Mail",16,100))
+                        Player.inventory.append(HereticPlateMail())
                         print("You gain : Heretic Plate Mail")
                         print("                                                                                            ")
 
@@ -980,7 +982,7 @@ def settlement_4(Player):
                         Player.demon_silk-=6
                         Player.gold-=2000
                         
-                        Player.inventory.append(ShadowArmour("Shadow Armour",25,100))
+                        Player.inventory.append(ShadowArmour())
                         print("You gain : Shadow Armour")
                         print("                                                                                            ")
 
@@ -999,7 +1001,7 @@ def settlement_4(Player):
                         Player.demon_bone-=6
                         Player.iron_shard-=6
                         Player.gold-=2000
-                        Player.inventory.append(DemonBastardSword("Demon Bastard Sword",45,100))
+                        Player.inventory.append(DemonBastardSword())
                         print("You gain : Demon Bastard Sword")
                         print("                                                                                            ")
 
@@ -1016,7 +1018,7 @@ def settlement_4(Player):
                     else:
                         Player.iron_shard-=10
                         Player.gold-=4000
-                        Player.inventory.append(FacebreakerGauntlet("FaceBreaker Gauntlet",40,700))
+                        Player.inventory.append(FacebreakerGauntlet())
                         print("You gain : FaceBreaker Gauntlet")
                         print("                                                                                            ")
 
