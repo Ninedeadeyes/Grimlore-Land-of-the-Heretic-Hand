@@ -7,8 +7,8 @@ from animation import*
 class Player(object):
     def __init__ (self,health,gold,strength,mana,exp,healing_potion,mana_potion):
         self.inventory=["Spell book"]
-        self.armour=Rags("Rags",0,20)
-        self.weapon=QuarterStaff("Wood Quarter Staff",5,20)
+        self.armour=Rags()
+        self.weapon=QuarterStaff()
         self.level=1
         self.gold=0
         self.health=100

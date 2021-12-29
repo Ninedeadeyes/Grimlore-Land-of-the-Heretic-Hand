@@ -140,9 +140,9 @@ def abandoned_outpost(Player):
             if choice==("Y"):
                 Player.healing_potion+=5
                 Player.mana_potion+=2
-                Player.inventory.append(HereticPlateMail("Heretic Plate Mail",16,100))
+                Player.inventory.append(HereticPlateMail())
                 Player.abandoned_outpost=True
-                print("You find some magical potions and a Plate Mail armour")
+                print("You find some magical potions and a Plate Mail Armour")
                 print("You gain 5 x healing potions 2x mana potions and a Heretic Plate Mail")
                 input("Press enter to continue")
                 break
@@ -199,8 +199,8 @@ def doom_king(Player):
             print("You gain 1 million gold")
             print("You gain Doom King Plate Mail")
             print("You gain Doom King Sword")
-            Player.inventory.append(DoomKingPlateMail("Doom King Plate Mail",50,2000))
-            Player.inventory.append(DoomKingSword("Doom King Sword",75,2000))
+            Player.inventory.append(DoomKingPlateMail())
+            Player.inventory.append(DoomKingSword())
 
             input("Press enter to continue")
             
@@ -332,7 +332,7 @@ def outside_nine_dead_eyes(Player):
                         Player.player_class="Shadow Hunter"
                         Player.max_strength+=15
                         Player.strength=Player.max_strength
-                        Player.inventory.append(ShadowBlade("Shadow Blade",75,2000))
+                        Player.inventory.append(ShadowBlade())
                         print("After many months of training you become a Skilled Shadow Hunter")
                         print("Nine Dead Eyes gifts you with the Shadow Blade ")
                         print("As a reward for completing your training ")
@@ -369,7 +369,7 @@ def outside_nine_dead_eyes(Player):
                     Player.player_class="Shadow Hunter"
                     Player.max_strength+=15
                     Player.strength=Player.max_strength
-                    Player.inventory.append(ShadowBlade("Shadow Blade",50,2000))
+                    Player.inventory.append(ShadowBlade())
                     print("After many months of training you become a Skilled Shadow Hunter")
                     print("Nine Dead Eyes gifts you with the Shadow Blade ")
                     print("As a reward for completing your training ")
