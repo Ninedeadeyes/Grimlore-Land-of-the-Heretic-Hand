@@ -753,9 +753,9 @@ def settlement_3(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Ratling Death Claws-32 DAM, 5x ratling furs, 3x Iron Shards, 1000g                (R)")
-                print("Doom Hammer-37 DAM, 2xDemon Silk, 5x Iron Shards, 2x Demon Bones and 1500g        (D)")
-                print("Heretic Plate Mail-16 PROT,3x Brimstone, 3x Iron Shard, 3x Demon Bones and 1500g  (H)")
+                print("Ratling Death Claws-32 DAM, 4x ratling furs, 2x Iron Shards, 1000g                (R)")
+                print("Doom Hammer-37 DAM, 2xDemon Silk, 3x Iron Shards, 2x Demon Bones and 1500g        (D)")
+                print("Heretic Plate Mail-16 PROT,3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
                 print("Exit                                                                              (E)")
                 choice=input("Choice:").upper()                                                                                  
                 print_settlement()
@@ -763,16 +763,16 @@ def settlement_3(Player):
   
                 if choice==("R"):
 
-                    print("You need 5x ratling furs, 3x Iron Shards and 1000 gold to craft Ratling Death Claws")
+                    print("You need 4x ratling furs, 2x Iron Shards and 1000 gold to craft Ratling Death Claws")
 
-                    if Player.ratling_fur<5 or Player.gold<1000 or Player.iron_shard<3:
+                    if Player.ratling_fur<4 or Player.gold<1000 or Player.iron_shard<2:
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.ratling_fur-=5
-                        Player.iron_shard-=3
+                        Player.ratling_fur-=4
+                        Player.iron_shard-=2
                         Player.gold-=1000
                         Player.inventory.append(RatlingDeathClaws())
                         print("You gain : Ratling Death Claws")
@@ -782,16 +782,16 @@ def settlement_3(Player):
 
                 elif choice==("D"):
 
-                    print("You need 2x Demon Silk, 5x Iron Shards, 2x Demon Bones and 1500 gold to craft Doom Hammer ")
+                    print("You need 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500 gold to craft Doom Hammer ")
 
-                    if Player.demon_silk<2 or Player.gold<1500 or Player.iron_shard<5 or Player.demon_bone<2 :
+                    if Player.demon_silk<2 or Player.gold<1500 or Player.iron_shard<3 or Player.demon_bone<2 :
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
                         Player.demon_silk-=2
-                        Player.iron_shard-=5
+                        Player.iron_shard-=3
                         Player.demon_bone-=2
                         Player.gold-=1500
                         Player.inventory.append(DoomHammer())
@@ -801,17 +801,17 @@ def settlement_3(Player):
    
                 elif choice==("H"):
 
-                    print("You need 3x Brimstone, 3x Iron Shard, 3x Demon Bones and 1500 gold to craft Heretic Plate Mail")
+                    print("You need 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500 gold to craft Heretic Plate Mail")
 
-                    if Player.iron_shard<3 or Player.gold<1500 or Player.brimstone<3 or Player.demon_bone<3  :
+                    if Player.iron_shard<2 or Player.gold<1500 or Player.brimstone<3 or Player.demon_bone<2  :
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.iron_shard-=3
+                        Player.iron_shard-=2
                         Player.brimstone-=3
-                        Player.demon_bone-=3
+                        Player.demon_bone-=2
                         Player.gold-=1500
                         Player.inventory.append(HereticPlateMail())
                         print("You gain : Heretic Plate Mail")
@@ -898,59 +898,67 @@ def settlement_4(Player):
                         print("                                      ")
                            
                 elif choice==("P"):
-                    if Player.main_quest==False:
+                    if Player.doom_king_alive==False:
+                        print("What !! You have slain the Doom King !!")
+                        print("Well done but what is your next move ?")
+                        print_settlement()
+                        
+                    else:   
+                        if Player.main_quest==False:
 
-                        print ("Pug looks at you with wild eyes and mutteres")
-                        print("'My god, I think we have found the chosen one'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-        
-                        print_settlement()
-                        print("'You say that you were raised from your grave and lost your memories?'")
-                        print(" You nod in agreement and reply back with 'yes'      "                         )
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        print("He continues 'Do you have 3 marks on your chest that looks like a dragon ?' ")
-                        print(" You shake your head since you are unaware of any strange dragon marks on your body")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        print("'Oh sorry, you are not the chosen one, oh well maybe next time'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        Player.main_quest=True
+                            print ("Pug looks at you with wild eyes and mutteres")
+                            print("'My god, I think we have found the chosen one'")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("'You say that you were raised from your grave and lost your memories?'")
+                            print(" You nod in agreement and reply back with 'yes'      "                         )
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("He continues 'Do you have 3 marks on your chest that looks like a dragon ?' ")
+                            print(" You shake your head since you are unaware of any strange dragon marks on your body")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("'Oh sorry, you are not the chosen one, oh well maybe next time'")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            Player.main_quest=True
 
-                    else: 
-                        print("'Are you still here ?")
-                        print("Sometimes the gods play such cruel tricks on us mortals and this seems like one of them'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        print("'It happens once in a blue moon, we get someone who has been resurrected for apparentely no reason")
-                        print("and the whole experience leaves them with memory loss, at this stage you can do what you want'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        print("'You can retire from adventuring and live a quiet life or ... ")
-                        print("Challenge yourself to the Blood Pit of Telpo, explore the caves of Profound Misery or even.. '")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
-                        print("'Defeat Nizel the Doom King of the Heretic Hands and reclaim the land for the good")
-                        print("The choice is yours'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
+                        else: 
+                            print("'Are you still here ?")
+                            print("Sometimes the gods play such cruel tricks on us mortals and this seems like one of them'")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("'It happens once in a blue moon, we get someone who has been resurrected for apparentely no reason")
+                            print("and the whole experience leaves them with memory loss, at this stage you can do what you want'")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("'You can retire from adventuring and live a quiet life or ... ")
+                            print("Challenge yourself to the Blood Pit of Telpo, explore the caves of Profound Misery or even.. '")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+                            print("'Defeat Nizel the Doom King of the Heretic Hands and reclaim the land for the good")
+                            print("The choice is yours'")
+                            print("                                                              ")
+                            input("Press enter to continue")
+                            print("                                                              ")
+                            print_settlement()
+
+ 
+                    
                         
                 elif choice==("E"):
                     break
@@ -959,9 +967,9 @@ def settlement_4(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Shadow Amour-25 PROT,6x Demon Silk 6x Ratling fur and 2000g               (S)")
-                print("Demon Bastard Sword-45 DAM,6x Iron Shards 6x Demon Bones and 2000g        (D)")
-                print("Facebreaker Gauntlet-40 DAM,10x Iron Shards and 4000g                     (F)")
+                print("Shadow Amour-25 PROT,5x Demon Silk 5x Ratling fur and 2000g               (S)")
+                print("Demon Bastard Sword-45 DAM,5x Iron Shards 5x Demon Bones and 2000g        (D)")
+                print("Facebreaker Gauntlet-40 DAM,8x Iron Shards and 4000g                      (F)")
                 print("Exit                                                                      (E)")
                 
                 choice=input("Choice:").upper()                                                                                  
@@ -970,16 +978,16 @@ def settlement_4(Player):
   
                 if choice==("S"):
 
-                    print("You need 6x Demon Silk 6x Ratling fur and 2000g to craft Shadow Amour")
+                    print("You need 5x Demon Silk 5x Ratling fur and 2000g to craft Shadow Amour")
 
-                    if Player.demon_silk<6 or Player.ratling_fur<6 or Player.gold<2000:
+                    if Player.demon_silk<5 or Player.ratling_fur<5 or Player.gold<2000:
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.ratling_fur-=6
-                        Player.demon_silk-=6
+                        Player.ratling_fur-=5
+                        Player.demon_silk-=5
                         Player.gold-=2000
                         
                         Player.inventory.append(ShadowArmour())
@@ -990,16 +998,16 @@ def settlement_4(Player):
 
                 elif choice==("D"):
 
-                    print("You need 6x Iron Shards 6x Demon Bones and 2000g to craft Demon Bastard Sword")
+                    print("You need 5x Iron Shards 5x Demon Bones and 2000g to craft Demon Bastard Sword")
 
-                    if Player.iron_shard<6 or Player.demon_bone<6 or Player.gold<2000:
+                    if Player.iron_shard<5 or Player.demon_bone<5 or Player.gold<2000:
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.demon_bone-=6
-                        Player.iron_shard-=6
+                        Player.demon_bone-=5
+                        Player.iron_shard-=5
                         Player.gold-=2000
                         Player.inventory.append(DemonBastardSword())
                         print("You gain : Demon Bastard Sword")
@@ -1008,16 +1016,16 @@ def settlement_4(Player):
    
                 elif choice==("F"):
 
-                    print("You need 10x Iron Shards and 4000g craft Facebreaker Gauntlet")
+                    print("You need 8x Iron Shards and 3000g craft Facebreaker Gauntlet")
 
-                    if Player.iron_shard<10 or Player.gold<4000:
+                    if Player.iron_shard<8 or Player.gold<3000:
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.iron_shard-=10
-                        Player.gold-=4000
+                        Player.iron_shard-=8
+                        Player.gold-=3000
                         Player.inventory.append(FacebreakerGauntlet())
                         print("You gain : FaceBreaker Gauntlet")
                         print("                                                                                            ")
@@ -1161,42 +1169,42 @@ def settlement_5(Player):
         elif choice==("D"):
             while True:            
                 print("Would you like to trade for Diamond?")
-                print("20,000g for 1 Diamond            (G)  ")
-                print("16x Demon Bones for 1 Diamond    (D)  ")
-                print("20x Iron Shard for 1 Diamond     (I)  ")
+                print("8000g for 1 Diamond              (G)  ")
+                print("6x Demon Bones for 1 Diamond     (D)  ")
+                print("8x Iron Shard for 1 Diamond      (I)  ")
                 print("Exit                             (E)  ")
                 choice=input("Choice:").upper()
                 print_settlement()
                 
                 if choice==("G"):
-                    if Player.gold<20000:
+                    if Player.gold<8000:
                         print("You do not have enough gold")
                         input("Press Enter to continue")
 
                     else:
-                        Player.gold-=20000
+                        Player.gold-=8000
                         Player.diamond+=1
                         print("You gain 1 Diamond")
                         input("Press Enter to continue") 
 
                 elif choice==("D"):
-                    if Player.demon_bone<16:
+                    if Player.demon_bone<6:
                         print("You do not have enough Demon Bone ")
                         input("Press Enter to continue")
 
                     else:
-                        Player.demon_bone-=16
+                        Player.demon_bone-=6
                         Player.diamond+=1
                         print("You gain 1 Diamond")
                         input("Press Enter to continue")
 
                 elif choice==("I"):
-                    if Player.iron_shard<20:
+                    if Player.iron_shard<8:
                         print("You do not have enough Iron Shard ")
                         input("Press Enter to continue")
 
                     else:
-                        Player.iron_shard-=20
+                        Player.iron_shard-=8
                         Player.diamond+=1
                         print("You gain 1 Diamond")
                         input("Press Enter to continue")
