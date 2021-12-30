@@ -899,8 +899,16 @@ def settlement_4(Player):
                            
                 elif choice==("P"):
                     if Player.doom_king_alive==False:
-                        print("What !! You have slain the Doom King !!")
-                        print("Well done but what is your next move ?")
+                        print("'You have slain the Doom King !!")
+                        print(" Well done, but what is your next move ?'")
+                        input("Press enter to continue")
+                        print("                                                              ")
+                        print_settlement()
+                        print("'Retirement seems to be a good option with the amount of gold you accumulated")
+                        print(" or you can continue slaying demons,gaining more loot and power until the end of time")
+                        print(" the choice is yours, adventurer..'")
+                        input("Press enter to continue")
+                        print("                                                              ")
                         print_settlement()
                         
                     else:   
