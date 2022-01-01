@@ -1,8 +1,9 @@
+import sys
 import random
 from items import*
 import winsound
 import time
-from animation import*
+from animation import ending
 
 class Player(object):
     def __init__ (self,health,gold,strength,mana,exp,healing_potion,mana_potion):
@@ -549,7 +550,7 @@ class Player(object):
 
                 time.sleep(2)
                 input("Press enter to quit")  
-                quit()
+                sys.exit()
 
             elif hp<=0:
                 print("You have slain the "+name)
