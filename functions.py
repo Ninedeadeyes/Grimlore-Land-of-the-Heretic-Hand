@@ -72,17 +72,17 @@ def diamond(Player):
 def rag_man_1(Player):
     while True: 
         print("You see a rag man who is buying Demon Silk")
-        print("He will exchange 12x Demon Silk for a demonic weapon he found")
+        print("He will exchange 7x Demon Silk for a demonic weapon he found")
         choice=input("Yes(Y) NO(N)").upper()
 
         if choice==("Y"):
-            if Player.demon_silk<12:
+            if Player.demon_silk<7:
                 print("You do not have enough demon silk")
                 print("Come back another time")
                 input("Press enter to continue")
                 break
             else:
-                Player.demon_silk-=12
+                Player.demon_silk-=7
                 weapon=random.choice(weapon_list)
                 print("You gain",weapon)
                 print("With a sly smile the Rag man mutters 'lets do business again")
@@ -102,17 +102,17 @@ def rag_man_1(Player):
 def rag_man_2(Player):
     while True: 
         print("You see a rag man who is buying Brimstone")
-        print("He will exchange 12x Brimstone for a demonic weapon he found")
+        print("He will exchange 7x Brimstone for a demonic weapon he found")
         choice=input("Yes(Y) NO(N)").upper()
 
         if choice==("Y"):
-            if Player.brimstone<12:
+            if Player.brimstone<7:
                 print("You do not have enough Brimstone")
                 print("Come back another time")
                 input("Press enter to continue")
                 break
             else:
-                Player.brimstone-=12
+                Player.brimstone-=7
                 weapon=random.choice(weapon_list)
                 print("You gain",weapon)
                 print("With a sly smile the Rag man mutters 'lets do business again")
@@ -186,14 +186,14 @@ def outside_sideboss_2(Player):
 def doom_king(Player):
         winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
         print("You see the Doom King on his throne. He speaks, 'A new challenger, how exciting' ")
-        Player.enemy("Doom King",66,6666,10000,1000000,"Demon Bone")
+        Player.enemy("Doom King",75,6666,10000,1000000,"Demon Bone")
         if Player.flee==True:
             winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("\033c", end="")
             pass
         else:       
             print("\033c", end="")
-            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+            winsound.PlaySound(".\\music\\happy.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("You defeated the Doom King, you have freed the land from his evil hands")
             print("You have conquered the final 'end game' boss, thank you for playing !! ")
             print("You gain 1 million gold")
@@ -201,9 +201,8 @@ def doom_king(Player):
             print("You gain Doom King Sword")
             Player.inventory.append(DoomKingPlateMail())
             Player.inventory.append(DoomKingSword())
-
-            input("Press enter to continue")
-            
+            print("                       ")
+            input("Press enter to continue")        
             Player.doom_king_alive=False
 
 
@@ -431,6 +430,7 @@ def blood_pit( Player):
         Choice=input("Do you want to enter? Y or N ").upper()
 
         if Choice==("Y"):
+            winsound.PlaySound(".\\music\\bloodpit.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("Escaping a dual will reset the arena")
             print("There are 12 opponents")
             input("Press enter to continue")
@@ -511,8 +511,10 @@ def blood_pit( Player):
                 print("You have survived the arena ")
                 input("Press enter to continue")
                 break
-
+            
             print("Your score was",score)
+            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+
             if score==12:
                 print("You have defeated the arena")
                 print("You have become the master of the pit !!")

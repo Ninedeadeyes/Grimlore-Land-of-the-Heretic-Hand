@@ -20,38 +20,38 @@ class QuarterStaff  (Weapon):
 
 
 class ImpToothSpear(Weapon):
-    def __init__(self,name="Imp Tooth Spear",damage=8,value=75):
+    def __init__(self,name="Imp Tooth Spear",damage=10,value=75):
         Weapon.__init__(self,name,damage,value)
-        #"Imp Tooth Spear",8,75 Done
+        #"Imp Tooth Spear",10,75 Done
  
 
 class DemonBoneShiv(Weapon):
-     def __init__(self,name="Demon Bone Shank",damage=12,value=100):
+     def __init__(self,name="Demon Bone Shank",damage=14,value=100):
         Weapon.__init__(self,name,damage,value)
-        #"Demon Bone Shiv",12,100 Done
+        #"Demon Bone Shiv",14,100 Done
 
 
 class DemonBoneAxe(Weapon):
-    def __init__(self,name="Demon Bone Axe",damage=18,value=500):
+    def __init__(self,name="Demon Bone Axe",damage=20,value=500):
         Weapon.__init__(self,name,damage,value)
-        #"Demon Bone Axe",18,500 Done
+        #"Demon Bone Axe",20,500 Done
 
 class BrimstoneMace(Weapon):
-    def __init__(self,name="Brimstone Mace",damage=22,value=700):
+    def __init__(self,name="Brimstone Mace",damage=24,value=700):
         Weapon.__init__(self,name,damage,value)
-        #"Brimstone Mace",22,700 Done
+        #"Brimstone Mace",24,700 Done
 
 
 class RatlingDeathClaws(Weapon):
-    def __init__(self,name="Ratling Death Claws",damage=32,value=1200):
+    def __init__(self,name="Ratling Death Claws",damage=34,value=1200):
         Weapon.__init__(self,name,damage,value)
-        #"Ratling Death Claws",32,1200  Done
+        #"Ratling Death Claws",34,1200  Done
 
 
 class DoomHammer(Weapon):
-    def __init__(self,name="Doom Hammer",damage=37,value=1500):
+    def __init__(self,name="Doom Hammer",damage=39,value=1500):
         Weapon.__init__(self,name,damage,value)
-        #"Doom Hammer",37,1500  Done
+        #"Doom Hammer",39,1500  Done
 
 
 class SilverSword(Weapon):
@@ -92,33 +92,33 @@ class Armour():
 
 
 class Rags(Armour):
-    def __init__(self,name="Rags",protection=0,value=20):
+    def __init__(self,name="Rags",protection=1,value=20):
         Armour.__init__(self,name,protection,value)
-       #rags,0,20  Done
+       #rags,1,20  Done
 
 
 class RatskinTunic(Armour):
-    def __init__(self,name="Ratskin Tunic",protection=3,value=75):
+    def __init__(self,name="Ratskin Tunic",protection=4,value=75):
         Armour.__init__(self,name,protection,value)
-      #Ratskin Tunic,3,75 Done
+      #Ratskin Tunic,4,75 Done
 
 class SilkArmour(Armour):
-    def __init__(self,name="Silk Armour",protection=7,value=100):
+    def __init__(self,name="Silk Armour",protection=10,value=100):
         Armour.__init__(self,name,protection,value)
-      #"Silk Armour",7,100  Done
+      #"Silk Armour",10,100  Done
 
 
 
 class BrimstoneBoneArmour (Armour):
-    def __init__(self,name="Brimstone Bone Armour",protection=12,value=100):
+    def __init__(self,name="Brimstone Bone Armour",protection=14,value=100):
         Armour.__init__(self,name,protection,value)
-        #"Brimstone Bone Armour",12,100 Done
+        #"Brimstone Bone Armour",14,100 Done
 
 
 class HereticPlateMail (Armour):
-    def __init__(self,name="Heretic Plate Mail",protection=16,value=100):
+    def __init__(self,name="Heretic Plate Mail",protection=18,value=100):
         Armour.__init__(self,name,protection,value)
-        #"Heretic Plate Mail",16,100 Done
+        #"Heretic Plate Mail",18,100 Done
 
 
 class ShadowArmour (Armour):
