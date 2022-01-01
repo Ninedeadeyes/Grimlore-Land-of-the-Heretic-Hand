@@ -200,11 +200,11 @@ def settlement_1(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Ratskin Tunic-3 PROT, 1x Ratling fur and 75g                                (R)")
-                print("Brimstone Bone Armour-12 PROT,2x Brimstone and 2x Demon Bone and 700 gold   (B)")
-                print("Imp Tooth Spear-8 DAM, 1x Imp Tooth and 75g                                 (I)")
-                print("Demon Bone Shiv-12 DAM, 1x Demon Bone and 100g                              (D)")
-                print("Exit                                                                        (E)")
+                print("Ratskin Tunic-4 PROT, 1x Ratling fur and 75g                                 (R)")
+                print("Brimstone Bone Armour-14 PROT, 2x Brimstone and 2x Demon Bone and 700 gold   (B)")
+                print("Imp Tooth Spear-10 DAM, 1x Imp Tooth and 75g                                 (I)")
+                print("Demon Bone Shiv-14 DAM, 1x Demon Bone and 100g                               (D)")
+                print("Exit                                                                         (E)")
                 choice=input("Choice:").upper()                                                                                  
                 print_settlement()
 
@@ -456,10 +456,10 @@ def settlement_2(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Demon Bone Axe-15 DAM, 2x Demon Bone and 300g                 (D)")
-                print("Brimstone Mace-22 DAM,2x Brimstone, 2x Iron Shard and 500g    (B)")
-                print("Silk Armour-10 PROT,2x Demon Silk and 400g                    (S)")
-                print("Exit                                                          (E)")
+                print("Demon Bone Axe-20 DAM, 2x Demon Bone and 300g                  (D)")
+                print("Brimstone Mace-24 DAM, 2x Brimstone, 2x Iron Shard and 500g    (B)")
+                print("Silk Armour-10 PROT, 2x Demon Silk and 400g                    (S)")
+                print("Exit                                                           (E)")
                 
                 choice=input("Choice:").upper()                                                                                  
                 print_settlement()
@@ -753,10 +753,10 @@ def settlement_3(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Ratling Death Claws-32 DAM, 4x ratling furs, 2x Iron Shards, 1000g                (R)")
-                print("Doom Hammer-37 DAM, 2xDemon Silk, 3x Iron Shards, 2x Demon Bones and 1500g        (D)")
-                print("Heretic Plate Mail-16 PROT,3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
-                print("Exit                                                                              (E)")
+                print("Ratling Death Claws-34 DAM, 4x ratling furs, 2x Iron Shards, 1000g                 (R)")
+                print("Doom Hammer-39 DAM, 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500g        (D)")
+                print("Heretic Plate Mail-18 PROT, 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
+                print("Exit                                                                               (E)")
                 choice=input("Choice:").upper()                                                                                  
                 print_settlement()
 
@@ -901,12 +901,14 @@ def settlement_4(Player):
                     if Player.doom_king_alive==False:
                         print("'You have slain the Doom King !!")
                         print(" Well done, but what is your next move ?'")
+                        print("                                                              ")
                         input("Press enter to continue")
                         print("                                                              ")
                         print_settlement()
                         print("'Retirement seems to be a good option with the amount of gold you accumulated")
-                        print(" or you can continue slaying demons,gaining more loot and power until the end of time")
-                        print(" the choice is yours, adventurer..'")
+                        print(" or you can continue slaying demons, gaining more loot and power until the end of time,")
+                        print(" the choice is yours adventurer..'")
+                        print("                                                              ")
                         input("Press enter to continue")
                         print("                                                              ")
                         print_settlement()
@@ -926,7 +928,7 @@ def settlement_4(Player):
                             input("Press enter to continue")
                             print("                                                              ")
                             print_settlement()
-                            print("He continues 'Do you have 3 marks on your chest that looks like a dragon ?' ")
+                            print(" He continues 'Do you have 3 marks on your chest that looks like a dragon ?' ")
                             print(" You shake your head since you are unaware of any strange dragon marks on your body")
                             print("                                                              ")
                             input("Press enter to continue")
@@ -953,13 +955,13 @@ def settlement_4(Player):
                             print("                                                              ")
                             print_settlement()
                             print("'You can retire from adventuring and live a quiet life or ... ")
-                            print("Challenge yourself to the Blood Pit of Telpo, explore the caves of Profound Misery or even.. '")
+                            print(" Challenge yourself to the Blood Pit of Telpo, explore the caves of Profound Misery or even.. '")
                             print("                                                              ")
                             input("Press enter to continue")
                             print("                                                              ")
                             print_settlement()
-                            print("'Defeat Nizel the Doom King of the Heretic Hands and reclaim the land for the good")
-                            print("The choice is yours'")
+                            print("'Defeat Nizel the Doom King of the Heretic Hands and reclaim the land for the good..")
+                            print(" The choice is yours'")
                             print("                                                              ")
                             input("Press enter to continue")
                             print("                                                              ")
@@ -975,9 +977,9 @@ def settlement_4(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
-                print("Shadow Amour-25 PROT,5x Demon Silk 5x Ratling fur and 2000g               (S)")
-                print("Demon Bastard Sword-45 DAM,5x Iron Shards 5x Demon Bones and 2000g        (D)")
-                print("Facebreaker Gauntlet-40 DAM,8x Iron Shards and 4000g                      (F)")
+                print("Shadow Amour-25 PROT, 5x Demon Silk 5x Ratling fur and 2000g              (S)")
+                print("Demon Bastard Sword-45 DAM, 5x Iron Shards 5x Demon Bones and 2000g       (D)")
+                print("Facebreaker Gauntlet-40 DAM, 7x Iron Shards and 3000g                     (F)")
                 print("Exit                                                                      (E)")
                 
                 choice=input("Choice:").upper()                                                                                  
@@ -1024,15 +1026,15 @@ def settlement_4(Player):
    
                 elif choice==("F"):
 
-                    print("You need 8x Iron Shards and 3000g craft Facebreaker Gauntlet")
+                    print("You need 7x Iron Shards and 3000g craft Facebreaker Gauntlet")
 
-                    if Player.iron_shard<8 or Player.gold<3000:
+                    if Player.iron_shard<7 or Player.gold<3000:
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
 
                     else:
-                        Player.iron_shard-=8
+                        Player.iron_shard-=7
                         Player.gold-=3000
                         Player.inventory.append(FacebreakerGauntlet())
                         print("You gain : FaceBreaker Gauntlet")

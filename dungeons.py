@@ -794,6 +794,7 @@ def dungeon_7 (Player):
             
         elif r<90:
             print("You find a large stash of gold")
+            print("You gain 1000 gold")
             Player.gold+=1000                  
             
         else:

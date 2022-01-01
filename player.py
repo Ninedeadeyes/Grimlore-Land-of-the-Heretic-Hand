@@ -13,8 +13,8 @@ class Player(object):
         self.gold=0
         self.health=100
         self.max_health=100
-        self.strength=10
-        self.max_strength=10
+        self.strength=12
+        self.max_strength=12
         self.max_mana=5
         self.mana=5
         self.exp=0
