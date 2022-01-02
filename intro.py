@@ -2,6 +2,9 @@ import winsound
 import time
 import os
 
+# had to move intro_animation from animation
+#to intro as it was stuttering for some odd reason
+
 def intro_animation():
 
     print("""
