@@ -8,7 +8,7 @@ nothing_list=["You look for deadly traps but find none","You find nothing of int
 
 tip_list_1=["Make sure you equip your item after crafting","It is always good to have at least 1 healing potion before entering a dungeon","Remember you cannot escape or flee from a battle in the dungeon",
          "If you want to make life easier I would recommend to learn at least a spell or two", "There is a wizard called 'Pug' at port 'The Sea's Biscuits' who might be able to help with your memory",
-          "There is another human settlement North East from here called 'Gloom Watch'(+4x,+4y)"]
+          "There is another human settlement North East from here called 'Gloom Watch'(+4x,+4y)","The Temple of Asphal is north east of here(+2x,+2y)","The Dungeon of Doom is south west of here (-1x,-4y).The Dungeon of Doom is much more dangerous than the Temple of Asphal"]
 
 tip_list_2=["The Dungeon of Doom is much more dangerous than the Temple of Asphal","Remember you cannot escape or flee from a battle in the dungeon","If you need a map for the caves acquire the blood contract from this settlement",
          "If you want to make life easier I would recommend to learn at least a spell or two,", "There is a wizard call 'Pug' at port 'The Sea's Biscuits' who might be able to help with your memory"," If provided the opportunity, there is no shame in leaving a dungeon to fight another day"]
