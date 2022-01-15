@@ -52,11 +52,18 @@ local_name=Intro()  # to import 'name' from intro
 
 clear_screen_2()
 print("                                                          ")
-print("PRESS M + ENTER TO SWITCH MUSIC ON AND OFF.")
+print("PRESS N + ENTER TO TURN MUSIC ON/OFF .")
 print("                                                          ")
 
 
 music=0
+sound=0
+cave=0           # trigger music for the Caves of Profound Misery
+trigger=0        # trigger bg music for exiting Caves of Profound Misery
+
+#( The trigger and cave variables prevents bg/rave music being restart everytime you go on the spaces and only when you are leaving or entering the cave)  
+
+
 winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
 
 
@@ -91,9 +98,57 @@ while gameloop == True:
                 y = y
                 playerMap[y][x] = "@"
                 clear_screen_2()
+                print("Music change")
+                winsound.PlaySound(".\\music\\bloodpit.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                music=1
+                break
+
+            elif music==1:
+                y = y
+                playerMap[y][x] = "@"
+                clear_screen_2()
+                print("Music change")
+                winsound.PlaySound(".\\music\\intro.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                music=2
+                break
+
+            elif music==2:
+                y = y
+                playerMap[y][x] = "@"
+                clear_screen_2()
+                print("Music change")
+                winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                music=3
+                break
+
+            elif music==3:
+                y = y
+                playerMap[y][x] = "@"
+                clear_screen_2()
+                print("Music change")
+                winsound.PlaySound(".\\music\\rave.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                music=4
+                break
+
+            elif music==4:
+                y = y
+                playerMap[y][x] = "@"
+                clear_screen_2()
+                print("Music on")
+                winsound.PlaySound(None,  winsound.SND_ALIAS)    
+                winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                music=0
+                break
+
+        if movement == "N":
+
+            if sound==0:
+                y = y
+                playerMap[y][x] = "@"
+                clear_screen_2()
                 print("Music off")
                 winsound.PlaySound(None,  winsound.SND_ALIAS)
-                music=1
+                sound=1
                 break
             
             else:
@@ -103,9 +158,11 @@ while gameloop == True:
                 print("Music on")
                 winsound.PlaySound(None,  winsound.SND_ALIAS)    
                 winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
-                music=0
+                sound=0
                 break
                 
+
+
             
     
   
@@ -401,14 +458,29 @@ while gameloop == True:
             hero.gold+=treasure()   # From functions, i like how the coding mechanic works, so kept it like this
             print("                 ")
 
+    elif position =="y":
+        playerMap[y][x] = "@"
+        clear_screen_2()
+        if cave==1:
+            winsound.PlaySound(".\\music\\rave.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+            cave=0
+            trigger=1
+        print("You feel something different..")
+        print("                                          ")   
+             
 
 
     elif position =="Y":
         playerMap[y][x] = "@"
         clear_screen_2()
+        if trigger==1:
+            winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+            trigger=0
+        cave=1
         print("You see a wooden sign, it reads")
         print("WARNING:You are about to enter the Caves of Profound Misery")
-        print("Monsters are incredibly dangerous in here")      
+        print("Monsters are incredibly dangerous in here")
+        print("                                          ")   
 
     elif position == "0": 
         playerMap[y][x] = "0"

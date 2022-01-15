@@ -22,4 +22,4 @@ tip_list_4=["The Red Hawk Training camp is south west from here(-7x,-11y)","I he
 
 
 tip_list_5=["You can win Diamonds from the Blood Pit of Telpo ","You can find Diamonds within the Caves of Profound Misery","I hear there is a Goblin Shaman within the Caves of Profound Misery who can cross the Bed of Souls",
-           "Don't forget we have a Diamond Merchant at this Camp for you to trade your belongs for Diamonds"]
+           "Don't forget we have a Diamond Merchant at this Camp for you to trade your belongs for Diamonds","On your travels, ENTER 'M' to find a secret."]
