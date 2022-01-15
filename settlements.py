@@ -112,6 +112,8 @@ def settlement_1(Player):
 
                 if choice==("P"):
                     print("What type of Potions would you like?")
+                    print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
+                    print("                                                      ")
                     print( "Healing Potion 350g (H), Mana Potion 500g(M)")
                     choice=input("Choice:").upper()     
                     print_settlement()
@@ -200,6 +202,8 @@ def settlement_1(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
+                print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
+                print("                                                                              ")
                 print("Ratskin Tunic-4 PROT, 1x Ratling fur and 75g                                 (R)")
                 print("Brimstone Bone Armour-14 PROT, 2x Brimstone and 2x Demon Bone and 700 gold   (B)")
                 print("Imp Tooth Spear-10 DAM, 1x Imp Tooth and 75g                                 (I)")
@@ -209,9 +213,10 @@ def settlement_1(Player):
                 print_settlement()
 
                 if choice==("R"):
-                    print("You need 1x Ratling fur and 75 gold to craft Ratskin Tunic")
+                    
 
-                    if Player.ratling_fur<1 or Player.gold<75:      
+                    if Player.ratling_fur<1 or Player.gold<75:
+                        print("You need 1x Ratling fur and 75 gold to craft Ratskin Tunic")
                         print("You do not have the resource to craft this item")
                         print("                                                                                            ")
 
@@ -226,9 +231,10 @@ def settlement_1(Player):
 
                 elif choice==("I"):
 
-                    print("You need 1x Imp Tooth and 75 gold to craft Imp Tooth Spear")
+                    
 
                     if Player.imp_tooth<1 or Player.gold<75:
+                        print("You need 1x Imp Tooth and 75 gold to craft Imp Tooth Spear")
                         print("You do not have the resource to craft this item")
                         print("                                                                                            ")
 
@@ -241,9 +247,10 @@ def settlement_1(Player):
 
                 elif choice==("D"):
 
-                    print("You need 1x Demon Bone and 100 gold to craft Demon Bone Shiv")
+                    
 
                     if Player.demon_bone<1 or Player.gold<100:
+                        print("You need 1x Demon Bone and 100 gold to craft Demon Bone Shiv")
                         print("You do not have the resource to craft this item")
                         print("                                                                                            ")
 
@@ -256,9 +263,10 @@ def settlement_1(Player):
                         
                 elif choice==("B"):
 
-                    print("You need 2x Brimstone and 2x Demon Bone and 700 gold to craft Brimstone Bone Armour")
+                    
 
                     if Player.demon_bone<2 or Player.gold<700 or Player.brimstone<2:
+                        print("You need 2x Brimstone and 2x Demon Bone and 700 gold to craft Brimstone Bone Armour")
                         print("You do not have the resource to craft this item")
                         print("                                                                                            ")
 
@@ -370,6 +378,8 @@ def settlement_2(Player):
 
                 if choice==("P"):
                     print("What type of Potions would you like?")
+                    print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
+                    print("                                                      ")
                     print( "Healing Potion 350g (H), Mana Potion 500g(M)")
                     choice=input("Choice:").upper()     
                     print_settlement()
@@ -456,6 +466,8 @@ def settlement_2(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
+                print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
+                print("                                                                              ")
                 print("Demon Bone Axe-20 DAM, 2x Demon Bone and 300g                  (D)")
                 print("Brimstone Mace-24 DAM, 2x Brimstone, 2x Iron Shard and 500g    (B)")
                 print("Silk Armour-10 PROT, 2x Demon Silk and 400g                    (S)")
@@ -467,9 +479,10 @@ def settlement_2(Player):
   
                 if choice==("D"):
 
-                    print("You need 2x Demon Bone and 300 gold to craft Demon Bone Axe")
+
 
                     if Player.demon_bone<2 or Player.gold<300:
+                        print("You need 2x Demon Bone and 300 gold to craft Demon Bone Axe")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -485,9 +498,8 @@ def settlement_2(Player):
 
                 elif choice==("S"):
 
-                    print("You need 2x Demon Silk and 400 gold to craft Silk Armour")
-
                     if Player.demon_silk<2 or Player.gold<400:
+                        print("You need 2x Demon Silk and 400 gold to craft Silk Armour")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -502,9 +514,8 @@ def settlement_2(Player):
    
                 elif choice==("B"):
 
-                    print("You need 2x Brimstone and 2x Iron Shard and 500 gold to craft Brimstone Mace")
-
                     if Player.iron_shard<2 or Player.gold<500 or Player.brimstone<2 :
+                        print("You need 2x Brimstone and 2x Iron Shard and 500 gold to craft Brimstone Mace")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -621,6 +632,8 @@ def settlement_3(Player):
 
                 if choice==("P"):
                     print("What type of Potions would you like?")
+                    print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
+                    print("                                                      ")
                     print( "Healing Potion 350g (H), Mana Potion 500g(M)")
                     choice=input("Choice:").upper()     
                     print_settlement()
@@ -753,6 +766,8 @@ def settlement_3(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
+                print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
+                print("                                                                              ")
                 print("Ratling Death Claws-34 DAM, 4x ratling furs, 2x Iron Shards, 1000g                 (R)")
                 print("Doom Hammer-39 DAM, 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500g        (D)")
                 print("Heretic Plate Mail-18 PROT, 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
@@ -763,9 +778,8 @@ def settlement_3(Player):
   
                 if choice==("R"):
 
-                    print("You need 4x ratling furs, 2x Iron Shards and 1000 gold to craft Ratling Death Claws")
-
                     if Player.ratling_fur<4 or Player.gold<1000 or Player.iron_shard<2:
+                        print("You need 4x ratling furs, 2x Iron Shards and 1000 gold to craft Ratling Death Claws")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -782,9 +796,10 @@ def settlement_3(Player):
 
                 elif choice==("D"):
 
-                    print("You need 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500 gold to craft Doom Hammer ")
+
 
                     if Player.demon_silk<2 or Player.gold<1500 or Player.iron_shard<3 or Player.demon_bone<2 :
+                        print("You need 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500 gold to craft Doom Hammer ")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -800,10 +815,8 @@ def settlement_3(Player):
 
    
                 elif choice==("H"):
-
-                    print("You need 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500 gold to craft Heretic Plate Mail")
-
                     if Player.iron_shard<2 or Player.gold<1500 or Player.brimstone<3 or Player.demon_bone<2  :
+                        print("You need 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500 gold to craft Heretic Plate Mail")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -977,6 +990,8 @@ def settlement_4(Player):
         elif choice==("B"):
             while True: 
                 print("What would you like to craft?")
+                print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
+                print("                                                                              ")
                 print("Shadow Amour-25 PROT, 5x Demon Silk 5x Ratling fur and 2000g              (S)")
                 print("Demon Bastard Sword-45 DAM, 5x Iron Shards 5x Demon Bones and 2000g       (D)")
                 print("Facebreaker Gauntlet-40 DAM, 7x Iron Shards and 3000g                     (F)")
@@ -988,9 +1003,8 @@ def settlement_4(Player):
   
                 if choice==("S"):
 
-                    print("You need 5x Demon Silk 5x Ratling fur and 2000g to craft Shadow Amour")
-
                     if Player.demon_silk<5 or Player.ratling_fur<5 or Player.gold<2000:
+                        print("You need 5x Demon Silk 5x Ratling fur and 2000g to craft Shadow Amour")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -1008,9 +1022,8 @@ def settlement_4(Player):
 
                 elif choice==("D"):
 
-                    print("You need 5x Iron Shards 5x Demon Bones and 2000g to craft Demon Bastard Sword")
-
                     if Player.iron_shard<5 or Player.demon_bone<5 or Player.gold<2000:
+                        print("You need 5x Iron Shards 5x Demon Bones and 2000g to craft Demon Bastard Sword")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
@@ -1025,10 +1038,9 @@ def settlement_4(Player):
 
    
                 elif choice==("F"):
-
-                    print("You need 7x Iron Shards and 3000g craft Facebreaker Gauntlet")
-
+                    
                     if Player.iron_shard<7 or Player.gold<3000:
+                        print("You need 7x Iron Shards and 3000g craft Facebreaker Gauntlet")
                         print("You do not have enough material to craft this item")
                         print("                                                                                            ")
 
