@@ -21,3 +21,7 @@ https://www.youtube.com/watch?v=ePkWSRuAVH8
 Music created using BeepBox 
 
 Graphics created using Graphics Gale and Ascii converter (https://www.text-image.com/convert/ascii.html) 
+
+Check out my other Python Games at 
+
+https://ninedeadeyes.github.io/Python-Game-Gallery/
