@@ -1,4 +1,4 @@
-# Grimlore-Land-of-the-Heretic-Hand 1.13
+# Grimlore-Land-of-the-Heretic-Hand 1.14
 2D Open world ASCII rpg written in standard Library Python delivering an old school rpg experience. 
 
 
