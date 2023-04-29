@@ -204,8 +204,8 @@ def settlement_1(Player):
                 print("What would you like to craft?")
                 print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
                 print("                                                                              ")
-                print("Ratskin Tunic-4 PROT, 1x Ratling fur and 75g                                 (R)")
-                print("Brimstone Bone Armour-14 PROT, 2x Brimstone and 2x Demon Bone and 700 gold   (B)")
+                print("Ratskin Tunic-5 PROT, 1x Ratling fur and 75g                                 (R)")
+                print("Brimstone Bone Armour-15 PROT, 2x Brimstone and 2x Demon Bone and 700 gold   (B)")
                 print("Imp Tooth Spear-10 DAM, 1x Imp Tooth and 75g                                 (I)")
                 print("Demon Bone Shiv-14 DAM, 1x Demon Bone and 100g                               (D)")
                 print("Exit                                                                         (E)")
@@ -470,7 +470,7 @@ def settlement_2(Player):
                 print("                                                                              ")
                 print("Demon Bone Axe-20 DAM, 2x Demon Bone and 300g                  (D)")
                 print("Brimstone Mace-24 DAM, 2x Brimstone, 2x Iron Shard and 500g    (B)")
-                print("Silk Armour-10 PROT, 2x Demon Silk and 400g                    (S)")
+                print("Silk Armour-12 PROT, 2x Demon Silk and 400g                    (S)")
                 print("Exit                                                           (E)")
                 
                 choice=input("Choice:").upper()                                                                                  
@@ -770,7 +770,7 @@ def settlement_3(Player):
                 print("                                                                              ")
                 print("Ratling Death Claws-34 DAM, 4x ratling furs, 2x Iron Shards, 1000g                 (R)")
                 print("Doom Hammer-39 DAM, 2x Demon Silk, 3x Iron Shards, 2x Demon Bones and 1500g        (D)")
-                print("Heretic Plate Mail-18 PROT, 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
+                print("Heretic Plate Mail-24 PROT, 3x Brimstone, 2x Iron Shard, 2x Demon Bones and 1500g  (H)")
                 print("Exit                                                                               (E)")
                 choice=input("Choice:").upper()                                                                                  
                 print_settlement()
@@ -896,7 +896,7 @@ def settlement_4(Player):
                     if Player.sideboss_5_alive==True:            
                         Player.sidequest_5=True
                         print("Defeat 'Idijheh the Cultist Impaler' within the Cultist Temple of Lost Souls and we will give you a ship's deed ")
-                        print("The Cultist Temple is north west from here.")
+                        print("The Cultist Temple is north west from here (-17x,+14y).")
                         print("                                      ")
                     elif Player.sideboss_5_alive==False and Player.sidequest_5==True:
                         print("You have defeated Idijheh  here is your ship's deed. You gain 60 reputation")
@@ -992,7 +992,7 @@ def settlement_4(Player):
                 print("What would you like to craft?")
                 print("Bone:",Player.demon_bone, " Fur:", Player.ratling_fur, " Tooth:",Player.imp_tooth,"Silk:",Player.demon_silk," Iron:",Player.iron_shard," Brimstone:",Player.brimstone," Gold:",Player.gold)
                 print("                                                                              ")
-                print("Shadow Amour-25 PROT, 5x Demon Silk 5x Ratling fur and 2000g              (S)")
+                print("Shadow Armour-30 PROT, 5x Demon Silk 5x Ratling fur and 2000g             (S)")
                 print("Demon Bastard Sword-45 DAM, 5x Iron Shards 5x Demon Bones and 2000g       (D)")
                 print("Facebreaker Gauntlet-40 DAM, 7x Iron Shards and 3000g                     (F)")
                 print("Exit                                                                      (E)")
