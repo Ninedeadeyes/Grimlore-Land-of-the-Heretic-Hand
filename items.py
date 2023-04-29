@@ -98,33 +98,33 @@ class Rags(Armour):
 
 
 class RatskinTunic(Armour):
-    def __init__(self,name="Ratskin Tunic",protection=4,value=75):
+    def __init__(self,name="Ratskin Tunic",protection=5,value=75):
         Armour.__init__(self,name,protection,value)
-      #Ratskin Tunic,4,75 Done
+      #Ratskin Tunic,5,75 Done
 
 class SilkArmour(Armour):
-    def __init__(self,name="Silk Armour",protection=10,value=100):
+    def __init__(self,name="Silk Armour",protection=12,value=100):
         Armour.__init__(self,name,protection,value)
       #"Silk Armour",10,100  Done
 
 
 
 class BrimstoneBoneArmour (Armour):
-    def __init__(self,name="Brimstone Bone Armour",protection=14,value=100):
+    def __init__(self,name="Brimstone Bone Armour",protection=15,value=100):
         Armour.__init__(self,name,protection,value)
-        #"Brimstone Bone Armour",14,100 Done
+        #"Brimstone Bone Armour",15,100 Done
 
 
 class HereticPlateMail (Armour):
-    def __init__(self,name="Heretic Plate Mail",protection=18,value=100):
+    def __init__(self,name="Heretic Plate Mail",protection=24,value=100):
         Armour.__init__(self,name,protection,value)
-        #"Heretic Plate Mail",18,100 Done
+        #"Heretic Plate Mail",24,100 Done
 
 
 class ShadowArmour (Armour):
-    def __init__(self,name="Shadow Armour",protection=25,value=100):
+    def __init__(self,name="Shadow Armour",protection=30,value=100):
         Armour.__init__(self,name,protection,value)
-       #"Shadow Armour",25,100  Done
+       #"Shadow Armour",30,100  Done
 
 
 class HolyPlateMail (Armour):
@@ -134,6 +134,6 @@ class HolyPlateMail (Armour):
 
 
 class DoomKingPlateMail (Armour):
-    def __init__(self,name="Doom King Plate Mail",protection=50,value=100):
+    def __init__(self,name="Doom King Plate Mail",protection=70,value=100):
         Armour.__init__(self,name,protection,value)
         #"Doom King Plate Mail",50,100 Done

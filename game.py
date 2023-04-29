@@ -1,3 +1,4 @@
+
 import os
 import random
 from player import*
@@ -22,8 +23,9 @@ def order(bag):
         print (x+1, str(bag[x]))
 
 def displayMapAround(maps,x,y):
-  for dy in (-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7):
-    print( maps[y+dy][x-4:x+5] )
+    for dy in (-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11):
+        map_row = str(maps[y+dy][x-4:x+5]).replace(',', '').replace("'"," ").replace("."," ")
+        print(map_row)
 
 def clear_screen_2():
     print("\033c", end="")     
@@ -654,6 +656,7 @@ while gameloop == True:
             print("You see some strange caves, you have a bad feeling")
             print("There are bones scattered across the floor ")
             print("The caves are not easy to navigate through without a map")
+            print("Maybe someone at a settlement might be able to help...")
             print("                                                        ")
         elif hero.map==False:
             playerMap[y][x] = "C"
@@ -663,6 +666,7 @@ while gameloop == True:
             clear_screen_2()
             print("Even though you have killed the Sea Beast")
             print("You cannot navigate through these caves without a map")
+            print("Go back to the settlement to collect your reward")
             print("                                                        ")
 
         elif hero.map==True:

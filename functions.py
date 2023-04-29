@@ -30,16 +30,16 @@ def battle_2(Player):
     r= random.random()
     if r < .50:
         print("From the shadows a Hell Hound attacks you ")
-        Player.enemy("Hell Hound",20,180,350,150,"Demon Bone")
+        Player.enemy("Hell Hound",15,180,350,150,"Demon Bone")
         
 
     elif r < .80:
         print("A Ratling Death Stalker sneaks up behind you ")
-        Player.enemy("Ratling Death Stalker",25,250,350,200,"Ratling Fur")   
+        Player.enemy("Ratling Death Stalker",20,250,350,200,"Ratling Fur")   
 
     elif r<.90: 
         print ("You see a Red Ettercap ready to feed")
-        Player.enemy("Red Ettercap",18,400,350,300,"Demon Silk")
+        Player.enemy("Red Ettercap",15,300,350,300,"Demon Silk")
 
 
 def battle_3(Player):
@@ -47,16 +47,16 @@ def battle_3(Player):
     r= random.random()
     if r < .50:
         print("From the shadows a Doom Speaker attacks you ")
-        Player.enemy("Doom Speaker",70,500,1000,1500,"Demon Silk")
+        Player.enemy("Doom Speaker",60,400,1000,1500,"Demon Silk")
         
 
     elif r < .80:
         print("A Hand of Ungas sneaks up behind you ")
-        Player.enemy("Hand of Ungas",55,750,1000,1500,"Brimstone")   
+        Player.enemy("Hand of Ungas",45,600,1000,1500,"Brimstone")   
 
     elif r<.90: 
         print ("You see a Death Bloom ready to feed")
-        Player.enemy("Death Bloom",60,700,1200,2000,"Demon Silk")
+        Player.enemy("Death Bloom",50,500,1200,2000,"Demon Silk")
 
 
 def treasure():     #not needing an augement because 'return' was used. 
@@ -307,7 +307,7 @@ def outside_nine_dead_eyes(Player):
             print("and in the corner 'Nine Dead Eyes in a very small cage")
             print("The huge demon approaches you with an evil grin and bellow's out  ")
             print("'Fresh meat for the lady tonight'")
-            Player.enemy("Butcher",55,1000,1000,500,"Demon Bone")
+            Player.enemy("Butcher",40,700,1000,500,"Demon Bone")
             if Player.flee==True:
                 break
             else:
@@ -444,68 +444,68 @@ def blood_pit( Player):
                 score+=1                
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Cultist Impaler,",30,400,400,600,"Demon Bone")
+                Player.enemy("Cultist Impaler,",30,300,400,600,"Demon Bone")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Greater Demon",45,300,700,750,"Demon Bone") 
+                Player.enemy("Greater Demon",40,250,700,750,"Demon Bone") 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Clockwork Horror",65,150,500,750,"Iron Shard")  
+                Player.enemy("Clockwork Horror",60,120,500,750,"Iron Shard")  
 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")                
-                Player.enemy("Demon War Champion",50,450,1000,1000,"Demon Bone")
+                Player.enemy("Demon War Champion",45,400,1000,1000,"Demon Bone")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Hand of Ungas",55,800,1000,1500,"Brimstone")   
+                Player.enemy("Hand of Ungas",45,600,1000,1500,"Brimstone")   
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Clockwork Pain Taker  ",35,650,1000,750,"Iron Shard")
+                Player.enemy("Clockwork Pain Taker  ",30,600,1000,750,"Iron Shard")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Doom Speaker",45,400,800,1500,"Demon Silk")
+                Player.enemy("Doom Speaker",60,400,800,1500,"Demon Silk")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Bloom",60,700,1200,2000,"Demon Silk")
+                Player.enemy("Death Bloom",50,500,1200,2000,"Demon Silk")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Black Dragon",75,600,1200,2000,"Demon Bone")
+                Player.enemy("Black Dragon",65,600,1200,2000,"Demon Bone")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Knight",100,500,1200,2000,"Demon Bone")
+                Player.enemy("Death Knight",80,500,1200,2000,"Demon Bone")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Final Challenger arrives")  
-                Player.enemy("Blood Pit Champion",100,2000,2000,2000,"nothing")
+                Player.enemy("Blood Pit Champion",90,1200,2000,2000,"nothing")
                 if Player.flee==True:
                     break
                 score+=1
