@@ -25,3 +25,9 @@ Graphics created using Graphics Gale and Ascii converter (https://www.text-image
 Check out my other Python Games at 
 
 https://ninedeadeyes.github.io/Python-Game-Gallery/
+
+You can donate to me by 'buying' the game at itchio 
+
+https://ninedeadeyes.itch.io/grimlore
+
+Any donation will be grateful 
