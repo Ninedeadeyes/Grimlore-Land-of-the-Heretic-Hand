@@ -14,9 +14,9 @@ Note:
 
 Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.  
 
-Youtube video : 
+Youtube video ( Complete playthrough using the Shadow Hunter Class)  : 
 
-https://www.youtube.com/watch?v=ePkWSRuAVH8
+https://youtu.be/AeF9d5FkGsE
 
 Music created using BeepBox 
 
