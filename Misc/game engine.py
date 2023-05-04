@@ -50,15 +50,10 @@ x = 7
 y = 4
 
 def displayMapAround(maps,x,y):
-  for dy in (-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7):
-    print( maps[y+dy][x-4:x+5] )
+    for x in range(0,14):
+        map_row=str(maps[x]).replace(',', '').replace("'"," ").replace("."," ").replace("0","#")
+        print(map_row)  
 
-
-
-#Displaying the map
-def displayMap(maps):
-    for y in range(0,14):
-        print(maps[y])
 
 os.system("mode con cols=150 lines=50")
 

@@ -33,16 +33,12 @@ playerMap  = [["0","0","0","0","0","0","0","0","0"],
 x = 1
 y = 3
 
-def displayMapAround(maps,x,y):
-  for dy in (-1,0,1):
-    print( maps[y+dy][x-1:x+2] )
-
-
 
 #Displaying the map
-def displayMap(maps):
-    for y in range(0,12):
-        print(maps[y])
+def displayMap(maps):    #Displaying the map
+    for x in range(0,12):
+        map_row=str(maps[x]).replace(',', '').replace("'"," ").replace("."," ").replace("0","#")
+        print(map_row)  
 
 #selecting a map
 mapChoice = dungeonMap
