@@ -24,7 +24,7 @@ def order(bag):
 
 def displayMapAround(maps,x,y):
     for dy in (-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11):
-        map_row = str(maps[y+dy][x-4:x+5]).replace(',', '').replace("'"," ").replace("."," ")
+        map_row = str(maps[y+dy][x-4:x+5]).replace(',', '').replace("'"," ").replace("."," ").replace("0","*")
         print(map_row)
 
 def clear_screen_2():
