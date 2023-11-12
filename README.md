@@ -31,3 +31,7 @@ You can donate to me by 'buying' the game at itchio
 https://ninedeadeyes.itch.io/grimlore
 
 Any donation will be grateful 
+
+*Most virus checker will think that the exe is a virus but it is just the way it was converted using pyinstaller.
+
+https://stackoverflow.com/questions/43777106/program-made-with-pyinstaller-now-seen-as-a-trojan-horse-by-avg
