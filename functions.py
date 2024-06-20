@@ -47,16 +47,16 @@ def battle_3(Player):
     r= random.random()
     if r < .50:
         print("From the shadows a Doom Speaker attacks you ")
-        Player.enemy("Doom Speaker",60,400,1000,1500,"Demon Silk")
+        Player.enemy("Doom Speaker",50,350,1000,1500,"Demon Silk")
         
 
     elif r < .80:
         print("A Hand of Ungas sneaks up behind you ")
-        Player.enemy("Hand of Ungas",45,600,1000,1500,"Brimstone")   
+        Player.enemy("Hand of Ungas",35,550,1000,1500,"Brimstone")   
 
     elif r<.90: 
         print ("You see a Death Bloom ready to feed")
-        Player.enemy("Death Bloom",50,500,1200,2000,"Demon Silk")
+        Player.enemy("Death Bloom",45,450,1200,2000,"Demon Silk")
 
 
 def treasure():     #not needing an augement because 'return' was used. 
@@ -96,6 +96,7 @@ def rag_man_1(Player):
 
 
         else:
+            print("\033c", end="")
             print("I didn't quite catch that")
             
 
@@ -126,6 +127,7 @@ def rag_man_2(Player):
 
 
         else:
+            print("\033c", end="")
             print("I didn't quite catch that")       
         
         
@@ -186,7 +188,7 @@ def outside_sideboss_2(Player):
 def doom_king(Player):
         winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
         print("You see the Doom King on his throne. He speaks, 'A new challenger, how exciting' ")
-        Player.enemy("Doom King",75,6666,10000,1000000,"Demon Bone")
+        Player.enemy("Doom King",72,3000,10000,1000000,"Demon Bone")
         if Player.flee==True:
             winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("\033c", end="")
@@ -195,7 +197,7 @@ def doom_king(Player):
             print("\033c", end="")
             winsound.PlaySound(".\\music\\ending.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("You defeated the Doom King, you have freed the land from his evil hands")
-            print("You have conquered the final 'end game' boss, thank you for playing !! ")
+            print("You have conquered the final boss, but can you find the 'true' ending ? " )
             print("You gain 1 million gold")
             print("You gain Doom King Plate Mail")
             print("You gain Doom King Sword")
@@ -432,7 +434,7 @@ def blood_pit( Player):
 
         if Choice==("Y"):
             winsound.PlaySound(".\\music\\bloodpit.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
-            print("Escaping a dual will reset the arena")
+            print("Unlike within a dungeon you can escape a dual but it will reset the arena")
             print("There are 12 opponents")
             input("Press enter to continue")
             print("\033c", end="")
@@ -469,25 +471,25 @@ def blood_pit( Player):
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Hand of Ungas",45,600,1000,1500,"Brimstone")   
+                Player.enemy("Hand of Ungas",35,550,1000,1500,"Brimstone")   
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Clockwork Pain Taker  ",30,600,1000,750,"Iron Shard")
+                Player.enemy("Clockwork Pain Taker",30,600,1000,750,"Iron Shard")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Doom Speaker",60,400,800,1500,"Demon Silk")
+                Player.enemy("Doom Speaker",50,350,800,1500,"Demon Silk")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Bloom",50,500,1200,2000,"Demon Silk")
+                Player.enemy("Death Bloom",40,450,1200,2000,"Demon Silk")
                 if Player.flee==True:
                     break
                 score+=1
@@ -499,13 +501,13 @@ def blood_pit( Player):
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Knight",80,500,1200,2000,"Demon Bone")
+                Player.enemy("Death Knight",70,550,1200,2000,"Demon Bone")
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Final Challenger arrives")  
-                Player.enemy("Blood Pit Champion",90,1200,2000,2000,"nothing")
+                Player.enemy("Blood Pit Champion",78,1000,2000,2000,"nothing")
                 if Player.flee==True:
                     break
                 score+=1

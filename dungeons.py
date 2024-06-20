@@ -214,7 +214,7 @@ def dungeon_1 (Player):
 
 
 def dungeon_battle_1(Player):
-    print("deeper into the temple you go")
+    print("Deeper into the temple you go")
     Player.dungeon=True
        
     r= random.random()
@@ -304,7 +304,7 @@ def dungeon_2 (Player):
 def dungeon_battle_2(Player):
     
     Player.dungeon=True
-    print("deeper into the dungeon you go")   
+    print("Deeper into the dungeon you go")   
     r= random.random()
     if r < .45:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
@@ -406,7 +406,7 @@ def dungeon_3 (Player):
 def dungeon_battle_3(Player):
     
     Player.dungeon=True
-    print("deeper into the dungeon you go")   
+    print("Deeper into the dungeon you go")   
     r= random.random()
     if r <.45:
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
@@ -452,7 +452,7 @@ def dungeon_4 (Player):
             print("\033c", end="")
             print("Invalid choice, but it is too late to make a decision")
             print("A horde of monsters has blocked the exit")
-            print("deeper into the dungeon you go")
+            print("Deeper into the dungeon you go")
         input("Press enter to continue")
         print("\033c", end="")
         dungeon_battle_4(Player)
@@ -496,7 +496,7 @@ def dungeon_4 (Player):
 def dungeon_battle_4(Player):
     
     Player.dungeon=True
-    print("deeper into the dungeon you go")   
+    print("Deeper into the dungeon you go")   
     r= random.random()
     if r < .45:
         print("You hear a rumbling in the distance. A Corrupted Iron Golem appears ")
@@ -595,7 +595,7 @@ def dungeon_5 (Player):
 
 
 def dungeon_battle_5(Player):
-    print("deeper into the temple you go")
+    print("Deeper into the temple you go")
     Player.dungeon=True
        
     r= random.random()
@@ -650,7 +650,7 @@ def dungeon_6 (Player):
             print("\033c", end="")
             print("Invalid choice, but it is too late to make a decision")
             print("A horde of monsters has blocked the exit")
-            print("deeper into the dungeon you go")
+            print("Deeper into the dungeon you go")
         input("Press enter to continue")
         print("\033c", end="")  
         dungeon_battle_6(Player)
@@ -671,7 +671,7 @@ def dungeon_6 (Player):
             print("\033c", end="")
             print("Invalid choice, but it is too late to make a decision")
             print("A horde of monsters has blocked the exit")
-            print("deeper into the dungeon you go")
+            print("Deeper into the dungeon you go")
         input("Press enter to continue")
         print("\033c", end="")  
         dungeon_battle_6(Player)
@@ -712,7 +712,7 @@ def dungeon_6 (Player):
 def dungeon_battle_6(Player):
     
     Player.dungeon=True
-    print("deeper into the dungeon you go")   
+    print("Deeper into the dungeon you go")   
     r= random.random()
     if r < .45:
         print("You hear a rumbling in the distance. A Greater Demon appears ")
@@ -811,7 +811,7 @@ def dungeon_7 (Player):
 
 
 def dungeon_battle_7(Player):
-    print("deeper into the temple you go")
+    print("Deeper into the temple you go")
     Player.dungeon=True
        
     r= random.random()
@@ -821,7 +821,7 @@ def dungeon_battle_7(Player):
 
     elif r <.72:
         print(" You see a Clockwork Pain Taker in your distance. Prepare for combat")
-        Player.enemy("Clockwork Pain Taker  ",30,600,600,750,"Iron Shard")
+        Player.enemy("Clockwork Pain Taker",30,600,600,750,"Iron Shard")
         
 
     elif r <.87:
