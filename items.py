@@ -134,6 +134,6 @@ class HolyPlateMail (Armour):
 
 
 class DoomKingPlateMail (Armour):
-    def __init__(self,name="Doom King Plate Mail",protection=70,value=100):
+    def __init__(self,name="Doom King Plate Mail",protection=55,value=100):
         Armour.__init__(self,name,protection,value)
-        #"Doom King Plate Mail",50,100 Done
+        #"Doom King Plate Mail",40,100 Done

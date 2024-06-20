@@ -1,4 +1,3 @@
-
 import os
 import random
 from player import*
@@ -7,7 +6,6 @@ from dungeons import*
 from settlements import*
 from maps import*
 from intro import Intro 
-import time
 import winsound
 
 gameloop=True
@@ -48,7 +46,7 @@ hero=Player(100,0,10,5,0,0,0)
 
 #INTRO
 
-os.system("mode con cols=120 lines=48")
+os.system("mode con cols=135 lines=49")
 
 local_name=Intro()  # to import 'name' from intro
 
@@ -68,7 +66,6 @@ trigger=0        # trigger bg music for exiting Caves of Profound Misery
 
 winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
 
-
 #START OF GAME LOOP 
 
 while gameloop == True:
@@ -85,8 +82,8 @@ while gameloop == True:
             pass
             
         print("Name:",local_name," Health:",hero.health," STR:",(hero.strength+hero.weapon.damage)," Mana:",hero.mana," Gold:",hero.gold,)
-        print("Class:",hero.player_class," XP:",hero.exp, " Level:",hero.level," Reputation:",hero.reputation,"Turn:",hero.turn_counter)
-        print("Armour:",hero.armour.name,hero.armour.protection,"PROT+"," Weapon:",hero.weapon.name,hero.weapon.damage,"DAM+")
+        print("Class:",hero.player_class," XP:",hero.exp, " Level:",hero.level, " Talisman:",hero.talisman)
+        print("Armour:",hero.armour.name,"+",hero.armour.protection," Weapon:",hero.weapon.name,"+",hero.weapon.damage)
         hero.turn_counter+=1
         hero.mana=min(hero.max_mana,hero.mana+1)
         movement=input("W,S,D,A,ITEMS(I),USE(U) Choice: ").upper()

@@ -3,6 +3,7 @@ from player import Player
 from items import*
 from data import*
 from maps import*
+import winsound
 
 def print_settlement():
     print("\033c", end="")
@@ -106,15 +107,15 @@ def settlement_1(Player):
         elif choice==("T"):
             while True:
                 print("What service would you like ?")
-                print( "Buy Potions(P),Learn Spell (S) Exit(E)")
+                print( "Buy Items(I) Learn Spell(S) Exit(E)")
                 choice=input("Choice:").upper()
                 print_settlement()
 
-                if choice==("P"):
-                    print("What type of Potions would you like?")
+                if choice==("I"):
+                    print("What Items would you like?")
                     print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
                     print("                                                      ")
-                    print( "Healing Potion 350g (H), Mana Potion 500g(M)")
+                    print( "Healing Potion 350g (H), Mana Potion 500g(M), Resurrection Talisman 50g(R), Exit(E)")
                     choice=input("Choice:").upper()     
                     print_settlement()
 
@@ -141,7 +142,27 @@ def settlement_1(Player):
                             Player.gold-=500
                             print( "You gain a mana potion")
                             print("                             ")
+
+                    elif choice==("R"):
+                        if Player.talisman==("Resurrection"):
+                            print("You can only have 1 Talisman ")
+                            print("You can buy another once you have used it ")
+                        else: 
                         
+                            if Player.gold<50:
+                                print("You do not have enough gold")
+                                print("                             ")
+
+                            else:
+                                Player.talisman=("Resurrection")
+                                Player.gold-=50
+                                print( "You gain a Resurrection Talisman")
+                                print("                             ")  
+                                Player.inventory.append("Resurrection Talisman")  
+                    
+                    elif choice==("E"):
+                        print("             ")
+
                     else:
                         print_settlement()
                         print("invalid choice")
@@ -149,7 +170,7 @@ def settlement_1(Player):
                 
                 elif choice==("S"):
                     print("What spell would you like to learn")
-                    print("Fire Bolt 100g(F), Shadow Flee 50g(S)")
+                    print("Fire Bolt 100g(F), Shadow Flee 50g(S), Exit(E)")
                     choice=input("Choice:").upper()     
                     print_settlement()
                     
@@ -186,7 +207,10 @@ def settlement_1(Player):
                             Player.gold-=50
                             print("You gain the ability to use Shadow Flee")
                             print("                             ")        
-
+                    
+                    elif choice==("E"):
+                         print("")
+                   
                     else:
                         print("invalid option")
                         print("                             ")
@@ -372,15 +396,15 @@ def settlement_2(Player):
         elif choice==("T"):
             while True:
                 print("What service would you like ?")
-                print( "Buy Potions(P),Learn Spell (S) Exit(E)")
+                print( "Buy Items(I), Learn Spell(S), Exit(E)")
                 choice=input("Choice:").upper()
                 print_settlement()
 
-                if choice==("P"):
-                    print("What type of Potions would you like?")
+                if choice==("I"):
+                    print("What Items would you like?")
                     print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
                     print("                                                      ")
-                    print( "Healing Potion 350g (H), Mana Potion 500g(M)")
+                    print( "Healing Potion 350g(H), Mana Potion 500g(M), Resurrection Talisman 50g(R), Exit(E)  ")
                     choice=input("Choice:").upper()     
                     print_settlement()
 
@@ -389,10 +413,11 @@ def settlement_2(Player):
                             print("You do not have enough gold")
                             print("                             ")
 
+
                         else:
                             Player.healing_potion+=1
                             Player.gold-=350
-                            print( "You gain a healing potion")
+                            print( "You gain a healing potion")                            
                             print("                             ")
 
                     elif choice==("M"):
@@ -406,15 +431,36 @@ def settlement_2(Player):
                             Player.gold-=500
                             print( "You gain a mana potion")
                             print("                             ")
+
+                    elif choice==("R"):
+                        if Player.talisman==("Resurrection"):
+                            print("You can only have 1 Talisman ")
+                            print("You can buy another once you have used it ")
+                        else: 
                         
+                            if Player.gold<50:
+                                print("You do not have enough gold")
+                                print("                             ")
+
+                            else:
+                                Player.talisman=("Resurrection")
+                                Player.gold-=50
+                                print( "You gain a Resurrection Talisman")
+                                print("                             ")  
+                                Player.inventory.append("Resurrection Talisman")      
+                    
+                    elif choice==("E"):
+                         print("")
+
                     else:
                         print_settlement()
                         print("invalid choice")
                         print("                             ")
+     
                 
                 elif choice==("S"):
                     print("What spell would you like to learn")
-                    print("Divine Heal 1000g(D), Ice Blast 700g(I)")
+                    print("Divine Heal 1000g(D), Ice Blast 700g(I), Exit(E)")
                     choice=input("Choice:").upper()     
                     print_settlement()
                     
@@ -449,7 +495,10 @@ def settlement_2(Player):
                             Player.ice_blast=True
                             Player.gold-=700
                             print("You gain the ability to use Ice Blast")
-                            print("                             ")       
+                            print("                             ")    
+                    
+                    elif choice==("E"):
+                        print("     ")
 
                     else:
                         print("invalid option")
@@ -626,15 +675,15 @@ def settlement_3(Player):
         elif choice==("T"):
             while True:
                 print("What service would you like ?")
-                print( "Buy Potions(P), Knighthood (K), Learn Spell(S), Exit(E)")
+                print( "Buy Items(I), Knighthood (K), Learn Spell(S), Exit(E)")
                 choice=input("Choice:").upper()
                 print_settlement()
 
-                if choice==("P"):
-                    print("What type of Potions would you like?")
+                if choice==("I"):
+                    print("What Items would you like?")
                     print("Healing potion:",Player.healing_potion," Mana potion:",Player.mana_potion)
                     print("                                                      ")
-                    print( "Healing Potion 350g (H), Mana Potion 500g(M)")
+                    print( "Healing Potion 350g (H), Mana Potion 500g(M), Resurrection Talisman 100g(R), Exit(E) ")
                     choice=input("Choice:").upper()     
                     print_settlement()
 
@@ -643,10 +692,11 @@ def settlement_3(Player):
                             print("You do not have enough gold")
                             print("                             ")
 
+
                         else:
                             Player.healing_potion+=1
                             Player.gold-=350
-                            print( "You gain a healing potion")
+                            print( "You gain a healing potion")                            
                             print("                             ")
 
                     elif choice==("M"):
@@ -660,7 +710,28 @@ def settlement_3(Player):
                             Player.gold-=500
                             print( "You gain a mana potion")
                             print("                             ")
+
+                    elif choice==("R"):
+                        if Player.talisman==("Resurrection"):
+                            print("You can only have 1 Talisman ")
+                            print("You can buy another once you have used it ")
+                        else: 
                         
+                            if Player.gold<50:
+                                print("You do not have enough gold")
+                                print("                             ")
+
+                            else:
+                                Player.talisman=("Resurrection")
+                                Player.gold-=50
+                                print( "You gain a Resurrection Talisman")
+                                print("                             ")  
+                                Player.inventory.append("Resurrection Talisman")   
+                    
+                    elif choice==("E"):
+                         print("")
+
+
                     else:
                         print_settlement()
                         print("invalid choice")
@@ -713,7 +784,7 @@ def settlement_3(Player):
 
                 elif choice==("S"):
                     print("What spell would you like to learn")
-                    print("Divine Heal 1000g(D), Ice Blast 700g(I)")
+                    print("Divine Heal 1000g(D), Ice Blast 700g(I), Exit(E)")
                     choice=input("Choice:").upper()     
                     print_settlement()
                     
@@ -749,6 +820,9 @@ def settlement_3(Player):
                             Player.gold-=700
                             print("You gain the ability to use Ice Blast")
                             print("                             ")       
+                            
+                    elif choice==("E"):
+                         print("")
 
                     else:
                         print("invalid option")
@@ -920,11 +994,24 @@ def settlement_4(Player):
                         print_settlement()
                         print("'Retirement seems to be a good option with the amount of gold you accumulated")
                         print(" or you can continue slaying demons, gaining more loot and power until the end of time,")
-                        print(" the choice is yours adventurer..'")
-                        print("                                                              ")
-                        input("Press enter to continue")
-                        print("                                                              ")
-                        print_settlement()
+                        print(" the choice is yours adventurer.. Press (Q) to Retire or (C) to Continue   '")
+                        choice=input("Choice:").upper()
+                        if choice=="Q":
+                            print("\033c", end="")
+                            winsound.PlaySound(".\\music\\ending.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
+                            print("All adventures must come to an end")
+                            print("Rest now, mighty hero of Grimlore")
+                            print("          THE END                 ")
+                            print("    Thank you for playing        ")
+
+                            input("   Press enter to exit game       ")
+                            quit()
+
+                        else:
+                           print("You decide to carry on. Adventure awaits !!  ")
+                           input("Press enter to continue")
+                           print("                                                              ")
+                           print_settlement()
                         
                     else:   
                         if Player.main_quest==False:
