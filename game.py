@@ -1,7 +1,7 @@
 import os
 import random
 from player import*
-from functions import*
+from events import*
 from dungeons import*
 from settlements import*
 from maps import*
@@ -160,11 +160,6 @@ while gameloop == True:
                 sound=0
                 break
                 
-
-
-            
-    
-  
         if movement == "W":
             y = y-1
             position = mapChoice[y][x]
@@ -288,8 +283,6 @@ while gameloop == True:
                         else:
                             print ("invalid choice")
                             
-
-
                 elif choice==("S"):
                     playerMap[y][x] = "@"
                     clear_screen_2()
@@ -407,12 +400,12 @@ while gameloop == True:
 
         if hero.map==True:    # reduce amount of random battles outside of introduction area 
         
-            r=random.random()
-            if r < 0.95 :
-                nothing()
-                print("                 ")
+            r=random.random()                 # Once you find the map enemies become harder 
+            if r < 0.90 :                     # but enemy encounter are cut down from 10% to 2%
+                nothing()                     #  90% times nothing happens between 90 to 92 %  
+                print("                 ")    # there is an enemy encounter which is 2%
 
-            elif r < 0.80:
+            elif r < 0.92:
                 battle_2(hero)
                 clear_screen_2()
                              
@@ -448,7 +441,6 @@ while gameloop == True:
             nothing()
             print("                 ")
             
-
         elif r < 0.95:
             battle_3(hero)
             clear_screen_2()
@@ -466,9 +458,7 @@ while gameloop == True:
             trigger=1
         print("You feel something different..")
         print("                                          ")   
-             
-
-
+            
     elif position =="Y":
         playerMap[y][x] = "@"
         clear_screen_2()
@@ -528,7 +518,6 @@ while gameloop == True:
         print("                                      ")
         
 
-    
     elif position == "!":
         if hero.marks==False:
             playerMap[y][x] = "0"
@@ -584,8 +573,6 @@ while gameloop == True:
             print("                                                        ")
             clear_screen_2()
 
-
-
     elif position=="9":
         playerMap[y][x] = "@"
         clear_screen_2()
@@ -631,7 +618,6 @@ while gameloop == True:
         else:
             nothing()
 
- 
 #QUEST
     elif position == "C":
         if hero.sidequest_2==True and hero.sideboss_2_alive==True:
@@ -804,7 +790,6 @@ while gameloop == True:
         playerMap[y][x] = "@"
         clear_screen_2()  
          
-
 #DUNGEONS 
 
     elif position==("1"):
@@ -857,8 +842,6 @@ while gameloop == True:
             else:
                 clear_screen_2()
                 pass
-
-
 
     elif position==("3"):
         playerMap[y][x] = "D"
@@ -935,7 +918,6 @@ while gameloop == True:
                 clear_screen_2()
                 pass           
 
-  
     elif position==("6"):
         playerMap[y][x] = "D"
         x = previousX

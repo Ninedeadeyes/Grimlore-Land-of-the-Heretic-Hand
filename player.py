@@ -134,44 +134,44 @@ class Player(object):
             
             if choice==("A"):
 
+                event=random.randint(1,10)
+
+                if event==1:
+                    dice2=random.randint(1,12)
+                    player_damage=self.strength+dice2+self.weapon.damage
+                    hp-=player_damage
+                    print("The",name,"attacks you but you dodge the strike ")
+                    print("As the",name,"regains his composure...")
+                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+
+                elif event==2:
+                    dice1=random.randint(1,12)
+                    dice2=random.randint(1,12)
+                    dice_prot=random.randint(0,2)
+                    point_prot=dice_prot+self.armour.protection
+                    crit=round((strength+dice1)*1.25)
+                    enemy_damage=max(0,crit-point_prot)
+                    self.health-=enemy_damage
+                    player_damage=self.strength+dice2+self.weapon.damage
+                    hp-=player_damage
+                    print("The",name,"lands a critical hit of",enemy_damage,"damage. Your health is",str(self.health))
+                    print("Your armour protected you for",point_prot,"damage")
+                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+
+                else:
+                    dice1=random.randint(1,12)
+                    dice2=random.randint(1,12)
+                    dice_prot=random.randint(0,2)
+                    point_prot=dice_prot+self.armour.protection
+                    enemy_damage=max(0,strength+dice1-point_prot)
+                    self.health-=enemy_damage
+                    player_damage=self.strength+dice2+self.weapon.damage
+                    hp-=player_damage
+                    print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                    print("Your armour protected you for",point_prot,"damage")
+                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                
                 if self.shadow_hunter==True:
-
-                    event=random.randint(1,10)
-
-                    if event==1:
-                        dice2=random.randint(1,12)
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"attacks you but you dodge the strike ")
-                        print("As the",name,"regains his composure...")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
-
-                    elif event==2:
-                        dice1=random.randint(1,12)
-                        dice2=random.randint(1,12)
-                        dice_prot=random.randint(0,2)
-                        point_prot=dice_prot+self.armour.protection
-                        crit=round((strength+dice1)*1.25)
-                        enemy_damage=max(0,crit-point_prot)
-                        self.health-=enemy_damage
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"lands a critical hit of",enemy_damage,"damage. Your health is",str(self.health))
-                        print("Your armour protected you for",point_prot,"damage")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
-
-                    else:
-                        dice1=random.randint(1,12)
-                        dice2=random.randint(1,12)
-                        dice_prot=random.randint(0,2)
-                        point_prot=dice_prot+self.armour.protection
-                        enemy_damage=max(0,strength+dice1-point_prot)
-                        self.health-=enemy_damage
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
-                        print("Your armour protected you for",point_prot,"damage")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
 
                     r=random.random()
                     if r <.50:
@@ -194,58 +194,24 @@ class Player(object):
                     else:
                         print("You are not able to execute any of your Shadow Hunter's techniques this round")
                         
-
-                else:
-                                        
-                    event=random.randint(1,10)
-
-                    if event==1:
-                        dice2=random.randint(1,12)
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"attacks you but you dodge the strike ")
-                        print("As the",name,"regains his composure...")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
-
-                    elif event==2:
-                        dice1=random.randint(1,12)
-                        dice2=random.randint(1,12)
-                        dice_prot=random.randint(0,2)
-                        point_prot=dice_prot+self.armour.protection
-                        crit=round((strength+dice1)*1.25)
-                        enemy_damage=max(0,crit-point_prot)
-                        self.health-=enemy_damage
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"lands a critical hit of",enemy_damage,"damage. Your health is",str(self.health))
-                        print("Your armour protected you for",point_prot,"damage")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
-
-                    else:
-                        dice1=random.randint(1,12)
-                        dice2=random.randint(1,12)
-                        dice_prot=random.randint(0,2)
-                        point_prot=dice_prot+self.armour.protection
-                        enemy_damage=max(0,strength+dice1-point_prot)
-                        self.health-=enemy_damage
-                        player_damage=self.strength+dice2+self.weapon.damage
-                        hp-=player_damage
-                        print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
-                        print("Your armour protected you for",point_prot,"damage")
-                        print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
                         
             elif choice==("M"):
                 while True:
                     print ("What spell would you like to cast ?" )
-                    print("Fire Bolt 4 mana        (F)")
-                    print("Shadow Flee 2 mana      (S)")
-                    print("Ice Blast 5 mana        (I)")
-                    print("Divine Heal 7/4 mana    (D)")
-                    print("Chaos Vortex 6 mana     (V)")
+                    if self.fire_bolt==True:
+                        print("Fire Bolt 4 mana        (F)")
+                    if self.shadow_flee==True:
+                        print("Shadow Flee 2 mana      (S)")
+                    if self.ice_blast==True:
+                        print("Ice Blast 5 mana        (I)")
+                    if self.divine_heal==True:
+                        print("Divine Heal 7/4 mana    (D)")
+                    if self.chaos_vortex==True:
+                        print("Chaos Vortex 6 mana     (V)")
+                    print("Exit                    (E)")
                     spell=input("Spell: ")
                     spell=spell.upper()
 
-                    
                     if spell==("F"):
                         if self.fire_bolt==True and self.mana>=4:
                             power=random.randint(70,120)
@@ -416,6 +382,9 @@ class Player(object):
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
+                    elif spell==("E"):
+                            print("You decide not to cast a spell. What is your next action ?")
+                            break
                             
                 
                     else:
@@ -451,7 +420,7 @@ class Player(object):
 
             elif choice==("U"):
                 while True:
-                    print ("What would you like to use ? Healing Potion +250 Hp(H), Mana Potion +25 Mana(M)")
+                    print ("What would you like to use ? Healing Potion +250 Hp(H), Mana Potion +25 Mana(M), Exit(E)")
                     choice=input("Use:")
                     choice=choice.upper()
                     
@@ -509,6 +478,9 @@ class Player(object):
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
+                    elif spell==("E"):
+                            print("You decide not to use an item. What is your next action ?")
+                            break
 
 
                             
@@ -746,7 +718,6 @@ class Player(object):
                     self.level_up()
                     self.level20_claimed = True
                     self.level=20
-
 
                 input("Press enter to continue to adventure")
                 break
