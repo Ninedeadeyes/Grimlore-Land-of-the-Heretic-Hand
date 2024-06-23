@@ -1,5 +1,4 @@
 import random
-from player import Player
 from animation import dungeon_art,temple_art
 import time 
 

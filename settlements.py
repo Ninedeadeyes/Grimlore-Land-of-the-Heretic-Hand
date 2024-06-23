@@ -1,5 +1,4 @@
 import random
-from player import Player
 from items import*
 from data import*
 from maps import*
@@ -1000,7 +999,7 @@ def settlement_4(Player):
                             print("\033c", end="")
                             winsound.PlaySound(".\\music\\ending.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
                             print("All adventures must come to an end")
-                            print("Rest now, mighty hero of Grimlore")
+                            print("Rest now mighty hero of Grimlore")
                             print("          THE END                 ")
                             print("    Thank you for playing        ")
 
