@@ -11,7 +11,7 @@ class Weapon():
         self.value=value
         
     def __str__(self):
-        return "{}+{} DAM ".format(self.name, self.damage)
+        return "{}+{} DAM ".format(self.name, self.damage)   # Not used in game yet but will be useful if I ever weapon index for the game 
 
 class QuarterStaff  (Weapon):
     def __init__(self,name="Wood Quarter Staff",damage=5,value=20):
@@ -88,8 +88,7 @@ class Armour():
         self.value= value
         
     def __str__(self):
-        return "{}+{} PROT ".format(self.name, self.protection)
-
+        return "{}+{} PROT ".format(self.name, self.protection)   # Not used in game yet but will be useful if I ever armour index for the game 
 
 class Rags(Armour):
     def __init__(self,name="Rags",protection=1,value=20):
