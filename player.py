@@ -1,6 +1,7 @@
 import sys
 import random
 from items import*
+from enemy import*
 import winsound
 import time
 from animation import ending
@@ -118,10 +119,10 @@ class Player(object):
             else:
                 print("invalid choice")
                 
-    def enemy (self,name,strength,hp,xp,gold,item):
+    def fight (self,Enemy):
             
        
-        print(name+" HP:"+str(hp)+ " Str:" +str(strength))
+        print(Enemy.name+" hp:"+str(Enemy.hp)+ " Str:" +str(Enemy.strength))
         
         while True:
             self.flee=False
@@ -134,61 +135,96 @@ class Player(object):
             
             if choice==("A"):
 
+                enemy_special_dice=random.randint(1,10)
+                if enemy_special_dice==10:
+
+
+                    if Enemy.special==("bloodlust") :              # Lesser Demon,Hell Hound, Iron Tusk Demon, Greater Demon, butcher, demon troll, 
+                        Enemy.strength+=2
+                        print("The stench of blood fills the",Enemy.name,"with a killer instinct")
+                        print(Enemy.name,"gain a permanent +2 to strength")
+                        print("The battle continues.. ")
+
+                    if Enemy.special==("heal1") :               #Sea Beast, Clockwork Pain Taker
+                        if Enemy.hp<300:
+                            heal_dice=random.randint(50,125)
+                            Enemy.hp+=heal_dice
+                            print("The",Enemy.name,"starts to regenerate his wounds")
+                            print("The",Enemy.name,"gain", str(heal_dice),"hp. The",Enemy.name,"hp is now",Enemy.hp )
+                            print("The battle continues.. ")
+                    
+                    if Enemy.special==("heal2") :               # Doom King
+                        if Enemy.hp<1500:
+                            heal_dice=random.randint(100,500)
+                            Enemy.hp+=heal_dice
+                            print(Enemy.name,"starts to regenerate his wounds")
+                            print(Enemy.name,"gain", str(heal_dice),"hp. The",Enemy.name,"hp is now",Enemy.hp )
+                            print("The battle continues.. ")
+                    
+                    
+                    if Enemy.special==("drain") :                   #Fallen Knight, Ratling Mage
+                        if self.mana>0:
+                            self.mana=0
+                            print("The",Enemy.name,"drains you dry of mana")
+                            print("Your mana has dropped to 0. Time to hack and slash!" )
+                            print("The battle continues.. ")    
+
                 event=random.randint(1,10)
 
                 if event==1:
                     dice2=random.randint(1,12)
                     player_damage=self.strength+dice2+self.weapon.damage
-                    hp-=player_damage
-                    print("The",name,"attacks you but you dodge the strike ")
-                    print("As the",name,"regains his composure...")
-                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                    Enemy.hp-=player_damage
+                    print("The",Enemy.name,"attacks you but you dodge the strike. ")
+                    print("As the",Enemy.name,"regains his composure...")
+                    print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
 
                 elif event==2:
                     dice1=random.randint(1,12)
                     dice2=random.randint(1,12)
                     dice_prot=random.randint(0,2)
                     point_prot=dice_prot+self.armour.protection
-                    crit=round((strength+dice1)*1.25)
+                    crit=round((Enemy.strength+dice1)*1.25)
                     enemy_damage=max(0,crit-point_prot)
                     self.health-=enemy_damage
                     player_damage=self.strength+dice2+self.weapon.damage
-                    hp-=player_damage
-                    print("The",name,"lands a critical hit of",enemy_damage,"damage. Your health is",str(self.health))
+                    Enemy.hp-=player_damage
+                    print("The",Enemy.name,"lands a critical hit of",enemy_damage,"damage. Your health is",str(self.health))
                     print("Your armour protected you for",point_prot,"damage")
-                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                    print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
 
+    
                 else:
                     dice1=random.randint(1,12)
                     dice2=random.randint(1,12)
                     dice_prot=random.randint(0,2)
                     point_prot=dice_prot+self.armour.protection
-                    enemy_damage=max(0,strength+dice1-point_prot)
+                    enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                     self.health-=enemy_damage
                     player_damage=self.strength+dice2+self.weapon.damage
-                    hp-=player_damage
-                    print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                    Enemy.hp-=player_damage
+                    print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                     print("Your armour protected you for",point_prot,"damage")
-                    print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                    print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                 
                 if self.shadow_hunter==True:
 
                     r=random.random()
                     if r <.50:
                         dice3=random.randint(1,20)
-                        hp-=dice3
+                        Enemy.hp-=dice3
                         print("You deliver an additional body blow, you deal",dice3,"additional damage")
                                 
                     elif r <.75:
                         
                         dice3=random.randint(10,20)
-                        hp-=(self.strength+dice3+self.weapon.damage)
+                        Enemy.hp-=(self.strength+dice3+self.weapon.damage)
                         damage=(self.strength+dice3+self.weapon.damage)
                         print("You execute a critical hit you deal",damage,"additional damage")
 
                     elif r <.75:
                         dice3=random.randint(30,150)
-                        hp-=dice3
+                        Enemy.hp-=dice3
                         print("You use the infamous 'Shadow Death Grip' technique you deal",dice3,"additional damage" )
 
                     else:
@@ -215,10 +251,10 @@ class Player(object):
                     if spell==("F"):
                         if self.fire_bolt==True and self.mana>=4:
                             power=random.randint(70,120)
-                            hp-=power
+                            Enemy.hp-=power
                             self.mana-=4
-                            print("You cast a fire bolt at the "+name+". You deal",power,"fire damage. The "+name+" health is "+ str(hp))
-                            print("The "+name+" is set alight and is unable to attack back")
+                            print("You cast a fire bolt at the "+Enemy.name+". You deal",power,"fire damage. The "+Enemy.name+" health is "+ str(Enemy.hp))
+                            print("The "+Enemy.name+" is set alight and is unable to attack back")
 
                             break
 
@@ -227,9 +263,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
@@ -243,9 +279,9 @@ class Player(object):
                                 print("Mana cost for divine heal is reduce to 4 ")
                                 print("You have fully recovered your health")
                                 dice1=random.randint(1,12)
-                                enemy_damage=max(0,strength+dice1-self.armour.protection)
+                                enemy_damage=max(0,Enemy.strength+dice1-self.armour.protection)
                                 self.health-=enemy_damage
-                                print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                                print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                                 print("Your armour protected you for",self.armour.protection,"damage")
                                 break
 
@@ -254,9 +290,9 @@ class Player(object):
                                 dice1=random.randint(1,12)
                                 dice_prot=random.randint(0,2)
                                 point_prot=dice_prot+self.armour.protection
-                                enemy_damage=max(0,strength+dice1-point_prot)
+                                enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                                 self.health-=enemy_damage
-                                print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                                print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                                 print("Your armour protected you for",point_prot,"damage")
                                 break
 
@@ -267,9 +303,9 @@ class Player(object):
                                 self.health=self.max_health
                                 print("You have fully recover your health")
                                 dice1=random.randint(1,12)
-                                enemy_damage=max(0,strength+dice1-self.armour.protection)
+                                enemy_damage=max(0,Enemy.strength+dice1-self.armour.protection)
                                 self.health-=enemy_damage
-                                print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                                print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                                 print("Your armour protected you for",self.armour.protection,"damage")
                                 break
 
@@ -278,9 +314,9 @@ class Player(object):
                                 dice1=random.randint(1,12)
                                 dice_prot=random.randint(0,2)
                                 point_prot=dice_prot+self.armour.protection
-                                enemy_damage=max(0,strength+dice1-point_prot)
+                                enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                                 self.health-=enemy_damage
-                                print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                                print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                                 print("Your armour protected you for",point_prot,"damage")
                                 break
                         
@@ -290,9 +326,9 @@ class Player(object):
                         if self.dungeon==True:
                             print("You cannot escape in a dungeon")
                             dice1=random.randint(1,12)
-                            enemy_damage=max(0,strength+dice1-self.armour.protection)
+                            enemy_damage=max(0,Enemy.strength+dice1-self.armour.protection)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",self.armour.protection,"damage")
                             break
                         
@@ -306,9 +342,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
@@ -316,36 +352,36 @@ class Player(object):
                     elif spell==("I"):
                         if self.ice_blast==True and self.mana>=5:
                             power=random.randint(60,100)
-                            hp-=power
+                            Enemy.hp-=power
                             self.mana-=5
 
                             if self.shadow_hunter==True:
-                                print("You deal",power,"Ice damage.The "+name+" is frozen stiff,.You are able to get an extra 3 hits with your mastery of shadow combat ")
+                                print("You deal",power,"Ice damage.The "+Enemy.name+" is frozen stiff,.You are able to get an extra 3 hits with your mastery of shadow combat ")
                                 dice2=random.randint(1,12)
                                 player_damage=self.strength+dice2+self.weapon.damage
-                                hp-=(player_damage)
-                                print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                                Enemy.hp-=(player_damage)
+                                print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                                 dice2=random.randint(1,12)
                                 player_damage=self.strength+dice2+self.weapon.damage
-                                hp-=(player_damage)
-                                print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                                Enemy.hp-=(player_damage)
+                                print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                                 dice2=random.randint(1,12)
                                 player_damage=self.strength+dice2+self.weapon.damage
-                                hp-=(player_damage)
-                                print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                                Enemy.hp-=(player_damage)
+                                print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                                 break
 
                             else:
 
-                                print("You deal",power,"Ice damage.The "+name+" is frozen stiff,.You are able to get an extra 2 hits")
+                                print("You deal",power,"Ice damage.The "+Enemy.name+" is frozen stiff,.You are able to get an extra 2 hits")
                                 dice2=random.randint(1,12)
                                 player_damage=self.strength+dice2+self.weapon.damage
-                                hp-=(player_damage)
-                                print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                                Enemy.hp-=(player_damage)
+                                print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                                 dice2=random.randint(1,12)
                                 player_damage=self.strength+dice2+self.weapon.damage
-                                hp-=(player_damage)
-                                print("You attack the",name,"and deal",player_damage,"damage. The",name,"health is "+ str(hp))
+                                Enemy.hp-=(player_damage)
+                                print("You attack the",Enemy.name,"and deal",player_damage,"damage. The",Enemy.name,"health is "+ str(Enemy.hp))
                                 break
 
                         else:
@@ -353,20 +389,20 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
                     elif spell==("V"):
                         if self.chaos_vortex==True and self.mana>=6:
                             power=random.randint(200,500)
-                            hp-=power
+                            Enemy.hp-=power
                             self_damage=random.randint(5,40)
                             self.health-=self_damage
                             self.mana-=6
-                            print("You deal",power,"Chaos damage.The "+name+" is stun for the round. The",name,"health is "+ str(hp))
+                            print("You deal",power,"Chaos damage.The "+Enemy.name+" is stun for the round. The",Enemy.name,"health is "+ str(Enemy.hp))
                             print("But such power does not come without sacrifice, Chaos vortex inflicts",self_damage,"to you. Your health is",str(self.health))
                             break
                             
@@ -376,9 +412,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
@@ -396,9 +432,9 @@ class Player(object):
                     dice1=random.randint(1,12)
                     dice_prot=random.randint(0,2)
                     point_prot=dice_prot+self.armour.protection
-                    enemy_damage=max(0,strength+dice1-point_prot)
+                    enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                     self.health-=enemy_damage
-                    print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                    print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                     print("Your armour protected you for",point_prot,"damage")
                 else:
                     
@@ -413,14 +449,14 @@ class Player(object):
                          dice1=random.randint(1,12)
                          dice_prot=random.randint(0,2)
                          point_prot=dice_prot+self.armour.protection
-                         enemy_damage=max(0,strength+dice1-point_prot)
+                         enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                          self.health-=enemy_damage
-                         print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                         print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                          print("Your armour protected you for",point_prot,"damage")
 
             elif choice==("U"):
                 while True:
-                    print ("What would you like to use ? Healing Potion +250 Hp(H), Mana Potion +25 Mana(M), Exit(E)")
+                    print ("What would you like to use ? Healing Potion +250 Enemy.hp(H), Mana Potion +25 Mana(M), Exit(E)")
                     choice=input("Use:")
                     choice=choice.upper()
                     
@@ -433,9 +469,9 @@ class Player(object):
                             print( "you drink a healing potion")
                             print("Your health is", str(self.health))
                             dice1=random.randint(1,12)
-                            enemy_damage=max(0,strength+dice1-self.armour.protection)
+                            enemy_damage=max(0,Enemy.strength+dice1-self.armour.protection)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",self.armour.protection,"damage")
                             break
                         
@@ -444,9 +480,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
@@ -462,9 +498,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
                         else:
@@ -472,9 +508,9 @@ class Player(object):
                             dice1=random.randint(1,12)
                             dice_prot=random.randint(0,2)
                             point_prot=dice_prot+self.armour.protection
-                            enemy_damage=max(0,strength+dice1-point_prot)
+                            enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                             self.health-=enemy_damage
-                            print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                            print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
@@ -489,9 +525,9 @@ class Player(object):
                         dice1=random.randint(1,12)
                         dice_prot=random.randint(0,2)
                         point_prot=dice_prot+self.armour.protection
-                        enemy_damage=max(0,strength+dice1-point_prot)
+                        enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                         self.health-=enemy_damage
-                        print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                        print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                         print("Your armour protected you for",point_prot,"damage")
                         break
 
@@ -500,9 +536,9 @@ class Player(object):
                 dice1=random.randint(1,12)
                 dice_prot=random.randint(0,2)
                 point_prot=dice_prot+self.armour.protection
-                enemy_damage=max(0,strength+dice1-point_prot)
+                enemy_damage=max(0,Enemy.strength+dice1-point_prot)
                 self.health-=enemy_damage
-                print("The",name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
+                print("The",Enemy.name,"attacks you for",enemy_damage,"damage. Your health is",str(self.health))
                 print("Your armour protected you for",point_prot,"damage")
                             
 
@@ -571,30 +607,30 @@ class Player(object):
                     input("Press enter to quit")  
                     sys.exit()
 
-            elif hp<=0:
-                print("You have slain the "+name)
-                print ("you gain", str(gold),"gold" )
-                print("you gain",str(xp),"exp")
-                self.gold+=gold
-                self.exp+=xp
+            elif Enemy.hp<=0:
+                print("You have slain the "+Enemy.name)
+                print ("you gain", str(Enemy.gold),"gold" )
+                print("you gain",str(Enemy.xp),"exp")
+                self.gold+=Enemy.gold
+                self.exp+=Enemy.xp
                 r= random.random()
                 if r <.50:
-                    if item ==("Imp Tooth"):
+                    if Enemy.item ==("Imp Tooth"):
                         self.imp_tooth+=1
                         print("You gain : Imp Tooth")
-                    elif item==("Ratling Fur"):
+                    elif Enemy.item==("Ratling Fur"):
                         self.ratling_fur+=1
                         print("You gain : Ratlng Fur")
-                    elif  item==("Demon Bone"):
+                    elif Enemy.item==("Demon Bone"):
                         self.demon_bone+=1
                         print("You gain : Demon Bone")
-                    elif item ==("Brimstone"):
+                    elif Enemy.item ==("Brimstone"):
                         self.brimstone+=1
                         print("You gain : Brimstone")
-                    elif item==("Iron Shard"):
+                    elif Enemy.item==("Iron Shard"):
                         self.iron_shard+=1
                         print("You gain : Iron Shard")
-                    elif  item==("Demon Silk"):
+                    elif Enemy.item==("Demon Silk"):
                         self.demon_silk+=1
                         print("You gain : Demon Silk")
 

@@ -1,6 +1,7 @@
 import random
 from animation import dungeon_art,temple_art
 import time 
+from enemy import*
 
 game=("poker","dice","mahjong","bingo","rummy","roulette")
 
@@ -60,7 +61,7 @@ def tresure_chest_1(Player):
 
             else:
                 print("Alas, it was a Mimic !! ")
-                Player.enemy("Mimic",8,100,60,50,"nothing")
+                Player.fight(Mimic())  
                 break
         else:
             print("You decide to leave the chest alone")
@@ -81,7 +82,7 @@ def tresure_chest_2(Player):
 
             else:
                 print("Alas, it was a Greater Mimic !! ")
-                Player.enemy("Greater Mimic",25,220,350,50,"nothing")                    
+                Player.fight(GreaterMimic())                    
                 break
         else:
             print("You decide to leave the chest alone")
@@ -102,7 +103,7 @@ def tresure_chest_3(Player):
 
             else:
                 print("Alas, it was a Demonic Mimic !! ")
-                Player.enemy("Demonic Mimic",50,250,500,1000,"nothing")
+                Player.fight(DemonicMimic()) 
                 break
         else:
             print("You decide to leave the chest alone")
@@ -219,16 +220,16 @@ def dungeon_battle_1(Player):
     r= random.random()
     if r <.45:
         print("A Ratling sneaks up behind you ")
-        Player.enemy("Ratling",2,80,30,30,"Ratling Fur")   
+        Player.fight(Ratling())  
 
     elif r <.72:
         print ("You see a Lesser Demon ready to feed")
-        Player.enemy("Lesser Demon",4,100,40,35,"Demon Bone")   
+        Player.fight(LesserDemon())    
         
 
     elif r <.87:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
-        Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
+        Player.fight(BrimstoneGremlin()) 
 
     elif r <.90:
         goblin_gamble(Player)
@@ -307,16 +308,16 @@ def dungeon_battle_2(Player):
     r= random.random()
     if r < .45:
         print("From the depth of darkness, a Brimstone Gremlin attacks ")
-        Player.enemy("Brimstone Gremlin",6,100,50,40,"Brimstone")
+        Player.fight(BrimstoneGremlin()) 
 
     elif r <.72:
         print("The dead wakes from his slumber, a Fallen Knight rises ")
-        Player.enemy("Fallen Knight",7,140,80,50,"Iron Shard") 
+        Player.fight(FallenKnight()) 
         
 
     elif r <.87:
         print(" You stumble upon a lone Ettercap. He wants to play with your guts ")
-        Player.enemy("Ettercap",10,120,100,60,"Demon Silk")
+        Player.fight(Ettercap()) 
 
     elif r <.90:
         goblin_gamble(Player)
@@ -333,7 +334,7 @@ def dungeon_sideboss_1(Player):
         
         Player.dungeon=True
         print("You see Balgot, the Demon Troll, prepare for the fight of your life")
-        Player.enemy("Demon Troll",16,200,120,60,"Demon Bone")
+        Player.fight(DemonTroll()) 
         print("You defeat the dreaded Demon Troll, now go and collect your reward from the Inn")
         Player.sideboss_1_alive=False
 
@@ -409,16 +410,15 @@ def dungeon_battle_3(Player):
     r= random.random()
     if r <.45:
         print(" You stumble upon a Chaos Spider. The Spider attacks you on sight ")
-        Player.enemy("Chaos Spider",16,150,200,90,"Demon Silk")
+        Player.fight(ChaosSpider()) 
 
     elif r <.72:
         print(" a Hellhound has marked your scent. Defend with violence")
-        Player.enemy("Hellhound",20,180,250,120,"Demon Bone")
+        Player.fight(HellHound()) 
         
-
     elif r <.87:
         print("You hear a roar in the distance. A Iron Tusk Demon appears ")
-        Player.enemy("Iron Tusk Demon",18,350,300,150,"Iron Shard") 
+        Player.fight(IronTuskDemon())  
         
 
     elif r <.90:
@@ -499,16 +499,15 @@ def dungeon_battle_4(Player):
     r= random.random()
     if r < .45:
         print("You hear a rumbling in the distance. A Corrupted Iron Golem appears ")
-        Player.enemy("Corrupted Iron Golem ",14,400,250,120,"Iron Shard") 
+        Player.fight(CorruptedIronGolem())  
 
     elif r <.72:
         print(" A Ratling Assassin attacks you in the darkness. Fight for your life")
-        Player.enemy("Ratling Assassin ",25,120,250,150,"Ratling Fur")
+        Player.fight(RatlingAssassin()) 
         
-
     elif r <.87:
         print(" You see a manical Demonic Abomination. End the wretched beast")
-        Player.enemy("Demonic Abomination",22,240,300,200,"Demon Bone")
+        Player.fight(DemonicAbomination()) 
 
     elif r <.90:
         goblin_gamble(Player)
@@ -600,16 +599,16 @@ def dungeon_battle_5(Player):
     r= random.random()
     if r < .45:
         print("You hear the muttering of the insane. An Lunatic Cultist appears ")
-        Player.enemy("Lunatic Cultist",14,180,150,80,"Brimstone") 
+        Player.fight(LunaticCultist()) 
 
     elif r <.72:
         print(" You see a Chaos Spawn in your distance. Prepare for combat")
-        Player.enemy("Chaos Spawn ",16,150,150,100,"Brimstone")
+        Player.fight(ChaosSpawn()) 
         
 
     elif r <.82:
         print(" A Cultist Champion rush towards you. Defend with violence")
-        Player.enemy("Cultist Champion",20,250,300,200,"Demon Bone")
+        Player.fight(CultistChampion()) 
 
     elif r <.90:
         goblin_gamble(Player)
@@ -623,7 +622,7 @@ def dungeon_sideboss_5(Player):
         
         Player.dungeon=True
         print("You see Idijheh, the Cultist Impaler, prepare for the fight of your life")
-        Player.enemy("Cultist Impaler,",30,300,400,400,"Demon Bone")
+        Player.fight(CultistImpaler()) 
         print("You defeat the dreaded Cultist Impaler, now go and collect your reward")
         Player.sideboss_5_alive=False
 
@@ -713,19 +712,19 @@ def dungeon_battle_6(Player):
     Player.dungeon=True
     print("Deeper into the dungeon you go")   
     r= random.random()
-    if r < .45:
+    if r < .40:
         print("You hear a rumbling in the distance. A Greater Demon appears ")
-        Player.enemy("Greater Demon",40,250,700,750,"Demon Bone") 
+        Player.fight(GreaterDemon())  
 
-    elif r <.72:
+    elif r <.70:
         print(" A Plague Demon attacks you in the darkness. Fight for your life")
-        Player.enemy("Plague Demon",25,400,400,750,"Demon Bone")
+        Player.fight(PlagueDemon())  
         
-    elif r < .87:
+    elif r < .85:
         print(" You see a manical Demon War Champion. End the wretched demon")
-        Player.enemy("Demon War Champion",45,400,1000,1000,"Demon Bone")
+        Player.fight(DemonWarChampion())  
 
-    elif r <.90:
+    elif r <.95:
         tresure_chest_3(Player)
 
     else:
@@ -816,16 +815,16 @@ def dungeon_battle_7(Player):
     r= random.random()
     if r < .45:
         print("You hear the muttering of the insane. A Clockwork Horror appears ")
-        Player.enemy("Clockwork Horror",60,120,600,750,"Iron Shard") 
+        Player.fight(ClockworkHorror()) 
 
     elif r <.72:
         print(" You see a Clockwork Pain Taker in your distance. Prepare for combat")
-        Player.enemy("Clockwork Pain Taker",30,600,600,750,"Iron Shard")
+        Player.fight(ClockworkPainTaker()) 
         
 
     elif r <.87:
         print(" A Clockwork Engineer rush towards you. Defend with violence")
-        Player.enemy("Clockwork Engineer",40,400,800,1000,"Iron Shard")
+        Player.fight(ClockworkEngineer()) 
 
     elif r <.90:
         tresure_chest_3(Player)

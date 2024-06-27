@@ -1,3 +1,4 @@
+
 import os
 import random
 from player import*
@@ -401,9 +402,9 @@ while gameloop == True:
         if hero.map==True:    # reduce amount of random battles outside of introduction area 
         
             r=random.random()                 # Once you find the map enemies become harder 
-            if r < 0.90 :                     # but enemy encounter are cut down from 10% to 2%
-                nothing()                     #  90% times nothing happens between 90 to 92 %  
-                print("                 ")    # there is an enemy encounter which is 2%
+            if r < 0.91 :                     # but enemy encounter are cut down from 10% to 1%
+                nothing()                     #  If r is less than 91% nothing happens 
+                print("                 ")    #  Basically if r=91% then a battle occurs 
 
             elif r < 0.92:
                 battle_2(hero)
@@ -437,7 +438,7 @@ while gameloop == True:
         r=random.random()
 
                 
-        if r < 0.80 :
+        if r < 0.87 :
             nothing()
             print("                 ")
             

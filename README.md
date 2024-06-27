@@ -1,4 +1,4 @@
-# Grimlore-Land-of-the-Heretic-Hand 1.16
+# Grimlore-Land-of-the-Heretic-Hand 1.17
 2D Open world ASCII rpg written in standard Library Python delivering an old school rpg experience. 
 
 
@@ -12,7 +12,7 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 
 Note:
 
-Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.  
+Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.
 
 Youtube video ( Complete playthrough using the Shadow Hunter Class)  : 
 

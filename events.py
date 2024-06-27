@@ -3,6 +3,7 @@ import time
 from data import nothing_list,weapon_list
 from items import*
 import winsound
+from enemy import*
 
 def nothing():
     nothing=random.choice(nothing_list)
@@ -13,32 +14,32 @@ def battle_1(Player):
     r= random.random()
     if r < .50:
         print("From the shadows a Bog Imp attacks you ")
-        Player.enemy("Bog Imp",1,80,20,25,"Imp Tooth")
+        Player.fight(BogImp())
         
 
     elif r < .80:
         print("A Ratling sneaks up behind you ")
-        Player.enemy("Ratling",2,80,30,30,"Ratling Fur")   
+        Player.fight(Ratling()) 
 
     elif r<.90: 
         print ("You see a Lesser Demon ready to feed")
-        Player.enemy("Lesser Demon",4,100,40,35,"Demon Bone")
+        Player.fight(LesserDemon()) 
 
 def battle_2(Player):
         
     r= random.random()
     if r < .50:
         print("From the shadows a Hell Hound attacks you ")
-        Player.enemy("Hell Hound",15,180,350,150,"Demon Bone")
+        Player.fight(HellHound()) 
         
 
     elif r < .80:
-        print("A Ratling Death Stalker sneaks up behind you ")
-        Player.enemy("Ratling Death Stalker",20,250,350,200,"Ratling Fur")   
+        print("A Ratling Mage sneaks up behind you ")
+        Player.fight(RatlingMage())    
 
     elif r<.90: 
         print ("You see a Red Ettercap ready to feed")
-        Player.enemy("Red Ettercap",15,300,350,300,"Demon Silk")
+        Player.fight(RedEttercap()) 
 
 
 def battle_3(Player):
@@ -46,16 +47,16 @@ def battle_3(Player):
     r= random.random()
     if r < .50:
         print("From the shadows a Doom Speaker attacks you ")
-        Player.enemy("Doom Speaker",50,350,1000,1500,"Demon Silk")
+        Player.fight(DoomSpeaker()) 
         
 
     elif r < .80:
         print("A Hand of Ungas sneaks up behind you ")
-        Player.enemy("Hand of Ungas",35,550,1000,1500,"Brimstone")   
+        Player.fight(HandofUngas())  
 
     elif r<.90: 
         print ("You see a Death Bloom ready to feed")
-        Player.enemy("Death Bloom",45,450,1200,2000,"Demon Silk")
+        Player.fight(DeathBloom()) 
 
 
 def treasure():     #not needing an augement because 'return' was used. 
@@ -71,17 +72,17 @@ def diamond(Player):
 def rag_man_1(Player):
     while True: 
         print("You see a rag man who is buying Demon Silk")
-        print("He will exchange 7x Demon Silk for a demonic weapon he found")
+        print("He will exchange 6x Demon Silk for a demonic weapon he found")
         choice=input("Yes(Y) NO(N)").upper()
 
         if choice==("Y"):
-            if Player.demon_silk<7:
+            if Player.demon_silk<6:
                 print("You do not have enough demon silk")
                 print("Come back another time")
                 input("Press enter to continue")
                 break
             else:
-                Player.demon_silk-=7
+                Player.demon_silk-=6
                 weapon=random.choice(weapon_list)
                 print("You gain",weapon)
                 print("With a sly smile the Rag man mutters 'lets do business again")
@@ -102,17 +103,17 @@ def rag_man_1(Player):
 def rag_man_2(Player):
     while True: 
         print("You see a rag man who is buying Brimstone")
-        print("He will exchange 7x Brimstone for a demonic weapon he found")
+        print("He will exchange 6x Brimstone for a demonic weapon he found")
         choice=input("Yes(Y) NO(N)").upper()
 
         if choice==("Y"):
-            if Player.brimstone<7:
+            if Player.brimstone<6:
                 print("You do not have enough Brimstone")
                 print("Come back another time")
                 input("Press enter to continue")
                 break
             else:
-                Player.brimstone-=7
+                Player.brimstone-=6
                 weapon=random.choice(weapon_list)
                 print("You gain",weapon)
                 print("With a sly smile the Rag man mutters 'lets do business again")
@@ -167,7 +168,7 @@ def abandoned_outpost(Player):
 def outside_sideboss_2(Player):
         print("You scream out the name 'Atumbrath'and you hear a roar back")
         print("You see the Sea Beast prepare for the fight of your life")
-        Player.enemy("Sea Beast",20,700,500,200,"Demon Bone")
+        Player.fight(SeaBeast()) 
         if Player.flee==True:
             print("\033c", end="")
             pass
@@ -179,7 +180,7 @@ def outside_sideboss_2(Player):
 def doom_king(Player):
         winsound.PlaySound(".\\music\\boss.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
         print("You see the Doom King on his throne. He speaks, 'A new challenger, how exciting' ")
-        Player.enemy("Doom King",72,3000,10000,1000000,"Demon Bone")
+        Player.fight(DoomKing())  
         if Player.flee==True:
             winsound.PlaySound(".\\music\\background.wav",  winsound.SND_ALIAS | winsound.SND_ASYNC +winsound.SND_LOOP)
             print("\033c", end="")
@@ -223,7 +224,7 @@ def outside_sideboss_3(Player):
               
         elif choice==("K"):
             print("I didn't want to do this but i must defend with violence")
-            Player.enemy("Shadow Hunter",50,400,700,300,"nothing")
+            Player.fight(ShadowHunter())  
 
             if Player.flee==True:
                 Player.sidequest_3_escape=True
@@ -295,7 +296,7 @@ def outside_nine_dead_eyes(Player):
             print("and in the corner 'Nine Dead Eyes in a very small cage")
             print("The huge demon approaches you with an evil grin and bellow's out  ")
             print("'Fresh meat for the lady tonight'")
-            Player.enemy("Butcher",40,700,1000,500,"Demon Bone")
+            Player.fight(Butcher())  
             if Player.flee==True:
                 break
             else:
@@ -424,74 +425,74 @@ def blood_pit( Player):
             print("\033c", end="")
             while True:
                 print("Your first Challenge arrives")
-                Player.enemy("Demon Troll",15,200,120,60,"Demon Bone")
+                Player.fight(DemonTroll()) 
                 if Player.flee==True:
                     break
                 score+=1                
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Cultist Impaler,",30,300,400,600,"Demon Bone")
+                Player.fight(CultistImpaler()) 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Greater Demon",40,250,700,750,"Demon Bone") 
+                Player.fight(GreaterDemon())  
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Clockwork Horror",60,120,500,750,"Iron Shard")  
+                Player.fight(ClockworkHorror()) 
 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")                
-                Player.enemy("Demon War Champion",45,400,1000,1000,"Demon Bone")
+                Player.fight(DemonWarChampion()) 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")
-                Player.enemy("Hand of Ungas",35,550,1000,1500,"Brimstone")   
+                Player.fight(HandofUngas())    
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Clockwork Pain Taker",30,600,1000,750,"Iron Shard")
+                Player.fight(ClockworkPainTaker()) 
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Doom Speaker",50,350,800,1500,"Demon Silk")
+                Player.fight(DoomSpeaker())  
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Bloom",40,450,1200,2000,"Demon Silk")
+                Player.fight(DeathBloom())  
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Black Dragon",65,600,1200,2000,"Demon Bone")
+                Player.fight(BlackDragon())  
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Next Challenger arrives")   
-                Player.enemy("Death Knight",70,550,1200,2000,"Demon Bone")
+                Player.fight(DeathKnight())  
                 if Player.flee==True:
                     break
                 score+=1
                 print("\033c", end="")
                 print("Final Challenger arrives")  
-                Player.enemy("Blood Pit Champion",78,1000,2000,2000,"nothing")
+                Player.fight(BloodPitChampion())  
                 if Player.flee==True:
                     break
                 score+=1
