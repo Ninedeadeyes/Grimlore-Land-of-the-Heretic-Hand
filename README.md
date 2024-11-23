@@ -12,21 +12,21 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 Game Features: <br>
 
 *Original music, graphics, and animations 
--3 unique character classes, each with distinctive abilities <br>
--Open-world environment featuring dungeons, settlements (towns), and other unique locations <br>
--Basic battle system with missed attacks, critical hits, and special abilities <br>
--Dungeons composed of both random and fixed events <br>
--Enemies will provide raw materials linked to their type (e.g., demons can drop demon bones) <br>
--Basic magic system with 5 learnable spells <br>
--XP leveling system with late-game stat boosts using diamonds <br>
--Inventory system for equipment management <br>
--Crafting system requiring raw materials for weapon and armor forging <br>
--"Resurrection Talisman" 1-up system (must be repurchased after each use) <br>
--Game ending <br>
+*3 unique character classes, each with distinctive abilities 
+*Open-world environment featuring dungeons, settlements (towns), and other unique locations 
+*Basic battle system with missed attacks, critical hits, and special abilities 
+*Dungeons composed of both random and fixed events 
+*Enemies will provide raw materials linked to their type (e.g., demons can drop demon bones) 
+*Basic magic system with 5 learnable spells 
+*XP leveling system with late-game stat boosts using diamonds 
+*Inventory system for equipment management 
+*Crafting system requiring raw materials for weapon and armor forging 
+*"Resurrection Talisman" 1-up system (must be repurchased after each use) 
+*Game ending 
 
 Note:
 
-Most likely I will be updating the game, even though complete, it still need some polishing and there will be bugs since the only person who has done any testing is me but hopefully nothing game breaking. Will be grateful with any feedback to improve the game. I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.
+I have uploaded the game engine and a method of entering command line without pressing enter in 'Misc'.
 
 Youtube video ( Complete playthrough using the Shadow Hunter Class)  : 
 
