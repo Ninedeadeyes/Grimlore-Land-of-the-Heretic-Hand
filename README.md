@@ -11,18 +11,18 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 
 Game Features: <br>
 
-Original music, graphics, and animations <br>
-3 unique character classes, each with distinctive abilities <br>
-Open-world environment featuring dungeons, settlements (towns), and other unique locations <br>
-Basic battle system with missed attacks, critical hits, and special abilities <br>
-Dungeons composed of both random and fixed events <br>
-Enemies will provide raw materials linked to their type (e.g., demons can drop demon bones) <br>
-Basic magic system with 5 learnable spells <br>
-XP leveling system with late-game stat boosts using diamonds <br>
-Inventory system for equipment management <br>
-Crafting system requiring raw materials for weapon and armor forging <br>
-"Resurrection Talisman" 1-up system (must be repurchased after each use) <br>
-Game ending <br>
+-Original music, graphics, and animations <br>
+-3 unique character classes, each with distinctive abilities <br>
+-Open-world environment featuring dungeons, settlements (towns), and other unique locations <br>
+-Basic battle system with missed attacks, critical hits, and special abilities <br>
+-Dungeons composed of both random and fixed events <br>
+-Enemies will provide raw materials linked to their type (e.g., demons can drop demon bones) <br>
+-Basic magic system with 5 learnable spells <br>
+-XP leveling system with late-game stat boosts using diamonds <br>
+-Inventory system for equipment management <br>
+-Crafting system requiring raw materials for weapon and armor forging <br>
+-"Resurrection Talisman" 1-up system (must be repurchased after each use) <br>
+-Game ending <br>
 
 Note:
 
