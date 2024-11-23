@@ -11,7 +11,7 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 
 Game Features: <br>
 
--Original music, graphics, and animations <br>
+*Original music, graphics, and animations 
 -3 unique character classes, each with distinctive abilities <br>
 -Open-world environment featuring dungeons, settlements (towns), and other unique locations <br>
 -Basic battle system with missed attacks, critical hits, and special abilities <br>
