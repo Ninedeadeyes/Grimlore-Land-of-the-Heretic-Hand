@@ -20,7 +20,7 @@ Game Features: <br>
 *XP leveling system with late-game stat boosts using diamonds <br>
 *Inventory system for equipment management <br>
 *Crafting system requiring raw materials for weapon and armor forging <br>
-*"Resurrection Talisman" 1-up system (must be repurchased after each use) <br>
+* 1-up "Resurrection Talisman" system (must be repurchased after each use) <br>
 *Game ending <br>
 
 Note:
