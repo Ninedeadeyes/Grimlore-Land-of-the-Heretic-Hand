@@ -1,4 +1,4 @@
-# Grimlore-Land-of-the-Heretic-Hand 1.17
+# Grimlore-Land-of-the-Heretic-Hand 1.18
 2D Open world ASCII rpg written in standard Library Python delivering an old school rpg experience. <br>
 
 Is it the best open world rpg you have ever played ? Probably not but is it the best open world rpg you ever played coded in python 3 just using the standard library ? ( Potentially )  
@@ -25,7 +25,7 @@ Game Features: <br>
 
 Note:
 
-I have uploaded the game engine and a method of entering command line without pressing enter in the 'Misc' folder
+I have uploaded the game engine and a method of entering command line without pressing enter in the 'Misc' folder.
 
 Youtube video ( Complete playthrough using the Shadow Hunter Class)  : 
 
