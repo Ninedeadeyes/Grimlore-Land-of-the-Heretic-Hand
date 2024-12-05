@@ -25,7 +25,7 @@ Game Features: <br>
 
 Note:
 
-I have uploaded the game engine and a method of entering command line without pressing enter in the 'Misc' folder.
+I have uploaded the basic game engine, multi-level demo and a method of entering commands without pressing enter (mstcv.py) in the 'Misc' folder.
 Version 1.18 will be the last update as I feel the project is now complete.  
 
 Youtube video ( Complete playthrough using the Shadow Hunter Class)  : 
