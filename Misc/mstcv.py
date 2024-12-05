@@ -33,12 +33,17 @@ playerMap  = [["0","0","0","0","0","0","0","0","0"],
 x = 1
 y = 3
 
+os.system("mode con cols=135 lines=49")
 
 #Displaying the map
 def displayMap(maps):    #Displaying the map
     for x in range(0,12):
         map_row=str(maps[x]).replace(',', '').replace("'"," ").replace("."," ").replace("0","#")
         print(map_row)  
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    displayMap(playerMap)
 
 #selecting a map
 mapChoice = dungeonMap
@@ -47,15 +52,14 @@ mapChoice = dungeonMap
 position = mapChoice[0][0]
 
 
+displayMap(playerMap)
 
-print(mapChoice[y][x])
 while position != "E":
-    os.system('cls' if os.name == 'nt' else 'clear')
-    displayMap(playerMap)
+
     previousX = x
     previousY = y
     playerMap[y][x] = "."
-    print("W,S,D,A,MAP")
+    print("W,S,D,A")
     movement = msvcrt.getch()
 
     if movement in {b'w', b'W'}:
@@ -84,13 +88,15 @@ while position != "E":
 
     position = mapChoice[y][x]
     playerMap[y][x] = "S"
+    clear_screen()
     
     if position == "0" or position == "1":
-        print("You hit a wall, you stumble in the darkness back to your previous position...")
         playerMap[y][x] = "0"
         x = previousX
         y = previousY
         playerMap[y][x] = "S"
+        clear_screen()
+        print("You hit a wall, you stumble in the darkness back to your previous position...")
         
 
 
