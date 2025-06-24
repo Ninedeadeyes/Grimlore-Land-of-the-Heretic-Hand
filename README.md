@@ -25,17 +25,17 @@ Game Features: <br>
 
 <details>
   <summary> Starter Guide (Spoiler Warning)</summary>
-* From the starting position, travel southeast to the first settlement (‘Beggar's Hole’).
-* At your first settlement, you can rest at the inn to regain HP and Mana.
-* Once you've saved enough gold, visit the temple to buy the item ‘Resurrection Talisman’.
-* Though optional, it is highly recommended to buy at least the two spells from this temple: Fire Bolt and Shadow Flee.
-* The first dungeon is northeast of ‘Beggar's Hole’, and it's called the Temple of Apshai.
-* You can grind this dungeon until you’ve saved enough gold and materials to purchase weapons and armour from the blacksmith in the settlement.
-* The enemies within each dungeon determine the materials you gain after defeating them, so you’ll need to grind specific dungeons for specific materials.
-* At every new settlement you discover, spend some coins at the inn to reveal tips and new locations.
-* After completing a ‘Blood Contract’, return to the inn where you received the quest to claim your reward.
-* Don’t forget to equip your new weapon or armour once you've purchased it.
-* When travelling on the over world map, if you press M and Enter you can change the music and N and Enter to stop the music 
+* From the starting position, travel southeast to the first settlement (‘Beggar's Hole’).<br>
+* At your first settlement, you can rest at the inn to regain HP and Mana.<br>
+* Once you've saved enough gold, visit the temple to buy the item ‘Resurrection Talisman’.<br>
+* Though optional, it is highly recommended to buy at least the two spells from this temple: Fire Bolt and Shadow Flee.<br>
+* The first dungeon is northeast of ‘Beggar's Hole’, and it's called the Temple of Apshai.<br>
+* You can grind this dungeon until you’ve saved enough gold and materials to purchase weapons and armour from the blacksmith in the settlement.<br>
+* The enemies within each dungeon determine the materials you gain after defeating them, so you’ll need to grind specific dungeons for specific materials.<br>
+* At every new settlement you discover, spend some coins at the inn to reveal tips and new locations.<br>
+* After completing a ‘Blood Contract’, return to the inn where you received the quest to claim your reward.<br>
+* Don’t forget to equip your new weapon or armour once you've purchased it.<br>
+* When travelling on the over world map, if you press M and Enter you can change the music and N and Enter to stop the music. <br>
  
 </details>
 
