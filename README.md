@@ -8,7 +8,8 @@ You see a wood sign pointing south east label 'Beggar's Hole'. Maybe you will fi
 
 Explore the land of the Heretic Hand and unravel the mystery of your past. Craft powerful weapons from the broken bodies of your enemies. Choose between 3 Class paths ( Shadow Hunter, Holy Knight and the Doom Wizard) each with their unique play style. Test your might in the Blood Pits of Telpo, complete bounty hunts called 'Blood Contracts' to gain reputation and other delightful rewards. After all that, if you think you are 'hard' enough challenge the Doom King of the Heretic Hand and free the land of his consuming darkness.
 
-Game Features: <br>
+<details><br>
+ <summary>GAME FEATURES <br></summary>
 
 * Original music, graphics, and animations <br>
 * 3 unique character classes, each with distinctive abilities <br>
@@ -22,6 +23,8 @@ Game Features: <br>
 * Crafting system requiring raw materials for weapon and armor forging <br>
 * 1-up "Resurrection Talisman" system (must be repurchased after each use) <br>
 * Game ending <br>
+</details>
+
 
 <details><br>
   <summary> STARTER GUIDE (Spoiler Warning)</summary><br>
