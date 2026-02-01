@@ -10,9 +10,7 @@ Explore the land of the Heretic Hand and unravel the mystery of your past. Craft
 
 
 GAME FEATURES
-<details><br>
- <summary>GAME FEATURES <br></summary>
-
+<details>
 * Original music, graphics, and animations <br>
 * 3 unique character classes, each with distinctive abilities <br>
 * Open-world environment featuring dungeons, settlements (towns), and other unique locations <br>
@@ -27,10 +25,8 @@ GAME FEATURES
 * Game ending <br>
 </details>
 
-STARTER GUIDE
-<details><br>
-  <summary> STARTER GUIDE (Spoiler Warning)</summary><br>
-  
+STARTER GUIDE (Spoiler Warning)
+<details>
 * From the starting position, travel southeast to the first settlement (‘Beggar's Hole’).<br>
 * At your first settlement, you can rest at the inn to regain HP and Mana.<br>
 * Once you've saved enough gold, visit the temple to buy the item ‘Resurrection Talisman’. <br>
