@@ -514,7 +514,7 @@ class Player(object):
                             print("Your armour protected you for",point_prot,"damage")
                             break
 
-                    elif spell==("E"):
+                    elif choice==("E"):
                             print("You decide not to use an item. What is your next action ?")
                             break
 
