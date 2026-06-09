@@ -8,6 +8,9 @@ from settlements import*
 from maps import*
 from intro import Intro 
 import winsound
+import time
+import sys
+import ctypes
 
 gameloop=True
 
@@ -38,6 +41,49 @@ def clear_screen_2():
  #   for x in range(0,29):
   #      print(maps[x])
 
+def resize_terminal(cols=135, lines=49):
+    if sys.platform == "win32":
+        # Windows Constants
+        SW_SHOWMAXIMIZED = 4
+        SWP_NOSIZE = 0x0001
+        HWND_TOP = 0
+        
+        # 1. Grab the baseline internal console window
+        hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+        
+        if hwnd:
+            # Crucial Fix: If running inside Windows Terminal, climb up to the 
+            # true outer window frame, otherwise SetWindowPos won't move it.
+            parent_hwnd = ctypes.windll.user32.GetParent(hwnd)
+            while parent_hwnd:
+                hwnd = parent_hwnd
+                parent_hwnd = ctypes.windll.user32.GetParent(hwnd)
+            
+            # 2. Teleport the actual outer frame to the top-left (0,0)
+            ctypes.windll.user32.SetWindowPos(hwnd, HWND_TOP, 0, 0, 0, 0, SWP_NOSIZE)
+            time.sleep(0.1)
+
+    # 3. Resize the internal text grid safely
+    sys.stdout.write(f"\x1b[8;{lines};{cols}t")
+    sys.stdout.flush()
+    time.sleep(0.1)
+    
+    # 4. Snap it to full maximized glory
+    if sys.platform == "win32" and hwnd:
+        ctypes.windll.user32.ShowWindow(hwnd, SW_SHOWMAXIMIZED)
+        time.sleep(0.2)
+
+    # 2. Now safely resize the internal text grid
+    sys.stdout.write(f"\x1b[8;{lines};{cols}t")
+    sys.stdout.flush()
+    time.sleep(0.1)
+    
+    # 3. Cleanly maximize it with native window buttons fully functional
+    if sys.platform == "win32" and hwnd:
+        SW_SHOWMAXIMIZED = 4
+        ctypes.windll.user32.ShowWindow(hwnd, SW_SHOWMAXIMIZED)
+        time.sleep(0.2)
+
 mapChoice =WorldMap
 
 
@@ -47,7 +93,7 @@ hero=Player(100,0,10,5,0,0,0)
 
 #INTRO
 
-os.system("mode con cols=135 lines=49")
+resize_terminal(135, 49)
 
 local_name=Intro()  # to import 'name' from intro
 

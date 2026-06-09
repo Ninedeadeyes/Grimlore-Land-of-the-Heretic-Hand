@@ -114,8 +114,8 @@ def intro_animation():
     | |___| (_| | | | | (_| | | (_) | |   | |_| | | |  __/ | | | |  __/ | |  __/ |_| | (__  | | | | (_| | | | | (_| |
     \_____/\__,_|_| |_|\__,_|  \___/|_|    \__|_| |_|\___| \_| |_/\___|_|  \___|\__|_|\___| \_| |_/\__,_|_| |_|\__,_|
                                                                                                                                                                                                                        
-                                
-                
+                                         
+          
                                                                                                                                                                                                        
                                 dddddddddddddddddddddddddddddddddddddddddddddddd                    
                               hh::::::::::::::::::::::::::::::::::::::::::::::::hh                  
@@ -254,11 +254,11 @@ def intro_animation():
     | |    / _` | '_ \ / _` |  / _ \|  _| | __| '_ \ / _ \ |  _  |/ _ \ '__/ _ \ __| |/ __| |  _  |/ _` | '_ \ / _` |
     | |___| (_| | | | | (_| | | (_) | |   | |_| | | |  __/ | | | |  __/ | |  __/ |_| | (__  | | | | (_| | | | | (_| |
     \_____/\__,_|_| |_|\__,_|  \___/|_|    \__|_| |_|\___| \_| |_/\___|_|  \___|\__|_|\___| \_| |_/\__,_|_| |_|\__,_|
-
-                                                                                                                                                                                                                     
+                                                                                                                                                                                                     
                                        All Music/Art/Programming by Tommy Kwong                                      
-
-                                       
+                                                                         
+          
+          
                                 dddddddddddddddddddddddddddddddddddddddddddddddd                    
                               hh::::::::::::::::::::::::::::::::::::::::::::::::hh                  
                             hh::                                                ::hh                
@@ -331,17 +331,13 @@ hhhhhhhhhhhhhhhhhhhhhhhhhhhh                    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
     time.sleep(1.5)
     print("That hand is yours.. You gasp for air as you free yourself")
     print("The only thing you can remember is your name")
-    name=input("Your name:")
+    name=input("Your name: ")
     if name =="":
         name=("Nameless")
         print("Alas, your memory betrays you")
         print("You see a wood sign pointing south east label 'Beggar's Hole' ")
         time.sleep(1)
         print("Maybe you will find some answers there or at least a safe place to sleep")
-        print("                                                            ")
-        input("Press enter to continue your struggle")
-
-    
 
     else:
         
@@ -349,8 +345,14 @@ hhhhhhhhhhhhhhhhhhhhhhhhhhhh                    hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
         print("You see a wood sign pointing south east label 'Beggar's Hole' ")
         time.sleep(1)
         print("Maybe you will find some answers there or at least a safe place to sleep")
-        print("                                                            ")
-        input("Press enter to continue your struggle")
+
+    input("Press enter to continue")
+    print("                           ")
+    print("INSTRUCTIONS:")
+    print("Movement: Use W, A, S, D ")
+    print("Press the action key, then press ENTER to confirm.")
+    print("                           ")
+    input("Press enter to continue your struggle")
 
     winsound.PlaySound(None,  winsound.SND_ALIAS)
 
